@@ -54,48 +54,6 @@ a{
   display: inline-block;
 }
 
-/* my style */
-.ico {
-  position: relative;
-  display: inline-block;
-}
-.box {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-.nosel {
-  user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-}
-.cover {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-.c {
-  content: ' ';
-  margin: auto;
-  display: block;
-  position: absolute;
-}
-.ci {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  content: ' ';
-  margin: auto;
-  position: absolute;
-}
-.anti {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .clearfix {
   zoom: 1;
 }
