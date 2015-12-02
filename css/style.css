@@ -4,11 +4,39 @@ body{
 
 aside{
     width: 230px;
+    max-width: 25%;
     height: 100%;
     background-color: #0A94C2;
     float: left;
     position: absolute;
     left: -115px;
+}
+
+aside .sidebar-button{
+    width: 50px;
+    height: 36px;
+    padding: 15px;
+    float: right;
+}
+
+aside .sidebar-button img{
+    width: 100%;
+}
+
+aside .sidebar-button .button-off{
+    display: none;
+}
+
+aside:hoover{
+    background-color: red;
+}
+
+aside:hoover .sidebar-button .button-on{
+    display: none;
+}
+
+aside:hoover .sidebar-button .button-off{
+    display: block;
 }
 
 .wrapper{
@@ -20,7 +48,7 @@ aside{
 
 .wrapper header{
     width: 1024px;
-    max-width: 80%;
+    max-width: 75%;
     line-height: 30px;
     margin: 0 auto;
     padding-top: 30px;
