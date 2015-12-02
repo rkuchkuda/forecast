@@ -5,7 +5,7 @@ body{
 aside{
     width: 230px;
     height: 100%;
-    background-color: #ff0088;
+    background-color: #0A94C2;
     float: left;
     position: absolute;
     left: -115px;
@@ -16,25 +16,35 @@ aside{
     height: 100%;
     margin: 0 auto;
     min-height: 100%;
-    height: auto !important;
 }
 
 .wrapper header{
-    width: 50%;
-    height: 30px;
+    width: 1024px;
+    max-width: 80%;
+    line-height: 30px;
     margin: 0 auto;
     padding-top: 30px;
 }
 
+.wrapper header:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .wrapper header .logo{
-    display: inline-block;
     float: left;
+    margin: 0 auto;
+    font-size: 25px;
 }
 
 .wrapper header form{
-    display:inline-block;
     float: right;
 }
 
+.wrapper main{
+    width: 1024px;
+    margin: 0 auto;
+}
 
 
