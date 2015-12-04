@@ -192,6 +192,11 @@ header a.container-head{
     display:block;
 }
 
+a:visited{
+	color: black;
+}
+
+
 header:after{
     content: "";
     display: table;
