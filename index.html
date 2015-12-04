@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Weather Felix's forecast</title>
+    <title>Postcard weather forecast</title>
     <meta charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/reset.css">
@@ -60,13 +60,17 @@
 
     <div class="wrapper">
       <header>
-        <div class="container-head">
-          <div class="logo">
-            Your weather forecast
-          </div>
+        <div href="index.html" class="container-head">
+          <a href="index.html" class="logo">
+            <img src="img/logo.png"></img>
+            <div class="logo-capt">
+              <p>POSTCARD</p>
+              <p>weather forecast</p>
+            </div>
+          </a>
           <form method="post" action="">
-            <input type="text" name="location" value="" placeholder="location">
-            <input type="submit" name="submit" value="Submit">
+            <input type="text" name="location" value="" placeholder="search for location">
+            <input type="submit" name="submit" value="">
           </form>
         </div>
       </header>  

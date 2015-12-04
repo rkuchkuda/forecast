@@ -1,5 +1,6 @@
 body{
     font-family: 'Neucha', cursive, Arial;
+    background-color: #EBEFF0;
 }
 
 .wrapper{
@@ -29,7 +30,7 @@ aside{
 aside .sidebar-button{
     width: 50px;
     height: 36px;
-    margin: 20px 28px 100px 0px;
+    margin: 60px 28px 60px 0px;
     float: right;
     content: "";
     display: table;
@@ -49,12 +50,12 @@ aside .sidebar-forecast-box{
     height: 465px;
     content: "";
     clear: both;
-    background-color: red;
+    background-color: ;
     
 }
 
 aside .sidebar-forecast-box .sidebar-forecast{
-    background-color: yellow;
+    background-color: ;
     width: 75px;
     height: 115px;
     margin-bottom: 40px;
@@ -181,10 +182,14 @@ aside:hover .sidebar-button .button-off{
 header{
     width: 1024px;
     max-width: 75%;
-    line-height: 30px;
+    height: 75px;
     margin: 0 auto;
-    margin-bottom: 95px;
-    padding-top: 30px;
+    margin-bottom: 65px;
+    padding-top: 15px;
+}
+
+header a.container-head{
+    display:block;
 }
 
 header:after{
@@ -195,12 +200,62 @@ header:after{
 
 header .logo{
     float: left;
-    margin: 0 auto;
-    font-size: 25px;
+    height: 100px;
+}
+
+header .logo img{
+    height: 100px;
+    float: left;
+    margin-right: 30px;
+}
+
+header .logo .logo-capt{
+    height: 50px;
+    float: left;
+    padding-top: 40px;
+}
+
+header .logo .logo-capt p{
+    font-size: 26px;
 }
 
 header form{
     float: right;
+    padding-top: 40px;
+    height: 50px;
+    background-color: none;
+}
+
+header form input[name="location"]{
+    width: 300px;
+    height: 47px;
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-family: "Neucha",cursive,Arial;
+    position: relative;
+    right: -55px;
+    top: 3px;
+    border-radius: 5px;
+    border: none;
+    box-sizing: border-box;
+}
+
+header form input[name="submit"]{
+    height: 45px;
+    width: 45px;
+    position: relative;
+    top: 2px;
+    background-color: white;
+    background-image: url('../img/search-ico.png');
+    background-repeat: no-repeat;
+    background-position: -55px 0px;
+    border: none;
+}
+
+header form input[name="submit"]:hover{
+    background-position: -2px 0px;
+    cursor: pointer;
 }
 
 /* end header */

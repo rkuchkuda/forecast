@@ -54,6 +54,10 @@ a{
   display: inline-block;
 }
 
+a:visited{
+	color: inherit;
+}
+
 .clearfix {
   zoom: 1;
   -ms-zoom: 1;
