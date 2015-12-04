@@ -56,6 +56,7 @@ a{
 
 .clearfix {
   zoom: 1;
+  -ms-zoom: 1;
 }
 .clearfix:before,
 .clearfix:after {
