@@ -18,7 +18,7 @@ aside{
     background-color: #0A94C2;
     float: left;
     position: absolute;
-    left: -115px;
+    left: 0px;   /* change thith to -115px */
     -webkit-transition: left 1.5s;
     -moz-transition: left 1.5s;
     -o-transition: left 1.5s;
@@ -86,10 +86,9 @@ aside .sidebar-forecast-min{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-
     content: "";
-    display: table;
     clear: both;
+    display: none; /*change thith to block*/
 }
 
 aside .sidebar-forecast-min .side-forecast-img-sm{
@@ -107,6 +106,51 @@ aside .sidebar-forecast-min .side-data-sm{
     color: white;
     font-size: 24px;
 }
+
+aside .sidebar-forecast{
+    max-width: 150px;
+    height: 115px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: "";
+    clear: both;
+    display: block; /*change thith to none*/
+}
+
+aside .sidebar-forecast .side-temp{
+    width: 75px;
+    line-height: 75px;
+    float: left;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+aside .sidebar-forecast .side-forecast-img{
+    width: 75px;
+    height: 75px;
+    float: left;
+    
+}
+
+aside .sidebar-forecast .side-forecast-img img{
+    width: 100%;
+}
+
+aside .sidebar-forecast .side-day{
+    width: 100%;
+    line-height: 40px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    display: block;
+    content: "";
+    clear: both;
+}
+
 /* end sidebar */
 
 /* header */
@@ -144,11 +188,13 @@ main{
     width: 1024px;
     max-width: 75%;
     margin: 0 auto;
+    sidebar-forecast
 }
 
 main .nav-button{
     width: 100%;
     height: 50px;
+    background-color: green;
 }
 
 main .arrow-up{
@@ -188,7 +234,7 @@ main .nav-button .arrow-capt{
 main .forecast-box{
     width: 100%;
     height: 300px;
-    background-color: none;
+    background-color: yellow;
 }
 
 main .forecast-box .forecast-date{
