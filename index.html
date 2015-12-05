@@ -7,6 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- css -->
       <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/jquery-ui.css">
       <link rel="stylesheet" href="css/reset.css">
       <link rel="stylesheet" href="css/style.css">
       <!-- ico -->
@@ -95,14 +96,16 @@
                         <div class="day-active">Thursday</div>
                         <div class="data-active">25 november</div>
                     </div>
-                    <div class="forecast-img" width="200px" height="200px">
+                    <div class="forecast-img">
                         <img src="img/forecast-img/snow-rain.png" alt="weather icon" />
                         <p>Rain whith snow</p>
                     </div>
-                    <form action="">
-                        <input type="text" name="date" value="" placeholder="date">
-                        <input type="submit" value="Submit">
-                    </form>
+                    <div class="date-form-box">
+                      <form method="get"  action="/" class="date-form">
+                          <input type="date" name="date" value="" placeholder="search for date">
+                          <input type="submit" name="submit" value="">
+                      </form>
+                    </div>
                     <div class="button-box">
                         <div class="button-temp"></div>
                         <div class="button-rain"></div>
@@ -131,6 +134,8 @@
         <div class="copyright">Created by Roman Kuchkuda, 2015</div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>

@@ -55,21 +55,6 @@ body{
     transform: translateX(0px);
 }
 
-#aside .test {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    width: 230px;
-    overflow: auto;
-    height: 100%;
-}
-
-/*dont working.need to fix*/
-
-/*dont working.need to fix*/
-
 #aside:hover .sidebar-button .button-right{
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -78,15 +63,10 @@ body{
     transform: rotate(180deg);
 }
 
-
-
-
-
-
 #aside .sidebar-button{
     width: 27px;
     height: 36px;
-    margin: 60px 40px 60px 0px;
+    margin: 60px 40px 75px 0px;
     float: right;
     content: "";
     display: table;
@@ -297,10 +277,6 @@ body{
     background-position: -55px 0px;
 }
 
-
-
-
-
 #header .search-form input[name="submit"]:hover{
     background-position: -2px 0px;
     cursor: pointer;
@@ -312,7 +288,7 @@ body{
 
 #main{
     position: relative;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
 
 #main .nav-button{
@@ -371,23 +347,25 @@ body{
 
 }
 
+#main .nav-button.arrow-down{
+    
+}
 
-#main .nav-button.arrow-down{}
+/* end nav */
 
-
-
-
+/* forecast box*/
 
 #main .forecast-box{
     width: 100%;
     height: 300px;
-    background-color: yellow;
     margin-bottom: 20px;
+    background-color: transparent; /*del*/
 }
 
 #main .forecast-box .forecast-date{
-    width: 100%;
+    width: 300px;
     height: 60px;
+    text-align: center;
 }
 
 #main .forecast-box .forecast-date .day-active,
@@ -397,16 +375,15 @@ body{
 }
 
 #main .forecast-box .forecast-img{
-    width: 280px;
+    width: 300px;
     height: 190px;
     max-width: 33%;
-    float:left;
+    text-align: center;
 }
 
 #main .forecast-box .forecast-img img{
     width: 150px;
     height: 150px;
-    margin: 0 auto;
 }
 
 #main .forecast-box .forecast-img p{
@@ -414,15 +391,67 @@ body{
     text-align: center;
 }
 
+#main .forecast-box .date-form-box{
+    width: 300px;
+}
 
+#main .date-form {
+    background-color: transparent;
+    width: 300px;
+    position: relative;
+    margin-top: 0px;
+}
+
+#main .date-form input:focus {
+    outline: none;
+}
+
+
+#main .date-form input[name="date"]{
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    height: 50px;
+    font-family: "Neucha", cursive, Arial;
+    text-align: center;
+    padding: 15px 15px 9px 15px;
+    background-color: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#main .date-form input[name="submit"]{  /*decide what to do whith submit*/
+    top: 2px;
+    right: 5px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    position: absolute;
+    background-color: transparent;
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-position: -55px 0px;
+    
+}
+
+#main .date-form input[name="submit"]:hover{
+    background-position: -2px 0px;
+    cursor: pointer;
+}
+
+/* end forecast-box*/
+    
 /* end forecast content */
 
 /* footer */
 
 #footer{
-    margin: 0;
-    height: 100px;
-    margin-top: -100px;
+    margin: -50px 0 0;
+    height: 50px;
     padding-left: 150px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
