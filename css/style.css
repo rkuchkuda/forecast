@@ -1,7 +1,7 @@
 body{
-    font-family: 'Neucha', cursive, Arial;
     color: #4D4D4D;
     background-color: #EBEFF0;
+    font-family: 'Neucha', cursive, Arial;
 }
 
 .wrapper{
@@ -9,51 +9,112 @@ body{
     height: 100%;
     margin: 0 auto;
     min-height: 100%;
+    padding-left: 150px;
+    padding-right: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    transition: transform 1.5s;
+    -o-transition: transform 1.5s;
+    -moz-transition: transform 1.5s;
+    -webkit-transition: transform 1.5s;
+    transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -webkit-transform: translateX(0px);
+}
+.wrapper.open{
+    transform: translateX(115px);
+    -ms-transform: translateX(115px);
+    -webkit-transform: translateX(115px);
 }
 
 /* sidebar */
 
-aside{
+#aside {
+    height: 100%;
     width: 230px;
     max-width: 25%;
-    height: 100%;
     background-color: #0A94C2;
-    float: left;
-    position: absolute;
-    left: -115px;   /* change thith to -115px */
-    -webkit-transition: left 1.5s;
-    -moz-transition: left 1.5s;
-    -o-transition: left 1.5s;
-    transition: left 1.5s;
+    position: fixed;
+    z-index: 2222;
+    -webkit-transform: translateX(-115px);
+    -moz-transform: translateX(-115px);
+    -o-transform: translateX(-115px);
+    transform: translateX(-115px);
+    -webkit-transition: transform 1.5s;
+    -moz-transition: transform 1.5s;
+    -o-transition: transform 1.5s;
+    transition: transform 1.5s;
     transition-timing-function: ease;
 }
 
-aside .sidebar-button{
+#aside:hover{
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+}
+
+#aside .test {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 230px;
+    overflow: auto;
+    height: 100%;
+}
+
+/*dont working.need to fix*/
+
+/*dont working.need to fix*/
+
+#aside:hover .sidebar-button .button-right{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+#aside .sidebar-button{
     width: 27px;
     height: 36px;
     margin: 60px 40px 60px 0px;
     float: right;
     content: "";
     display: table;
-    clear: both;
 }
 
-aside .sidebar-button img{
+#aside .sidebar-button img{
     width: 100%;
 }
-
-aside .sidebar-button .button-left{
-    display: none;
+#aside .sidebar-button .button-right{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 
-aside .sidebar-forecast-box{
+#aside .sidebar-forecast-box{
     width: 100%;
     height: 465px;
     content: "";
     clear: both;
 }
 
-aside .sidebar-forecast-box .sidebar-forecast{
+#aside .sidebar-forecast-box .sidebar-forecast{
     width: 75px;
     height: 115px;
     margin-bottom: 40px;
@@ -63,7 +124,7 @@ aside .sidebar-forecast-box .sidebar-forecast{
     clear: both;
 }
 
-aside:hover .sidebar-forecast-box .sidebar-forecast{ /*put :hover after aside*/
+#aside:hover .sidebar-forecast-box .sidebar-forecast{ /*put :hover after #aside*/
     width: 150px;
     height: 115px;
     margin: 0 auto;
@@ -73,29 +134,29 @@ aside:hover .sidebar-forecast-box .sidebar-forecast{ /*put :hover after aside*/
     clear: both;
 }
 
-aside .sidebar-forecast-box .sidebar-forecast-close{
+#aside .sidebar-forecast-box .sidebar-forecast-close{
     width: 100%;
     height: 100%;
     display: block; /*change thith to block*/
 }
 
-aside:hover .sidebar-forecast-box .sidebar-forecast-close{
+#aside:hover .sidebar-forecast-box .sidebar-forecast-close{
     display: none; /*change thith to none*/
 }
 
-aside .sidebar-forecast-box .sidebar-forecast-close img{
+#aside .sidebar-forecast-box .sidebar-forecast-close img{
     width: 75px;
     height: 75px;
     margin-bottom: 6px;
 }
 
-aside .sidebar-forecast-box .sidebar-forecast-close .side-data-sm{
+#aside .sidebar-forecast-box .sidebar-forecast-close .side-data-sm{
     text-align: center;
     color: #4D4D4D;
     font-size: 24px;
 }
 
-aside .sidebar-forecast-box .sidebar-forecast .sidebar-forecast-open{
+#aside .sidebar-forecast-box .sidebar-forecast .sidebar-forecast-open{
     max-width: 150px;
     height: 115px;
     margin: 0 auto;
@@ -108,11 +169,11 @@ aside .sidebar-forecast-box .sidebar-forecast .sidebar-forecast-open{
     display: none; /*change thith to none*/
 }
 
-aside:hover .sidebar-forecast-box .sidebar-forecast .sidebar-forecast-open{
+#aside:hover .sidebar-forecast-box .sidebar-forecast .sidebar-forecast-open{
     display: block;
 }
 
-aside .sidebar-forecast .sidebar-forecast-open .side-temp{
+#aside .sidebar-forecast .sidebar-forecast-open .side-temp{
     width: 75px;
     line-height: 75px;
     float: left;
@@ -121,18 +182,18 @@ aside .sidebar-forecast .sidebar-forecast-open .side-temp{
     text-align: center;
 }
 
-aside .sidebar-forecast .sidebar-forecast-open .side-forecast-img{
+#aside .sidebar-forecast .sidebar-forecast-open .side-forecast-img{
     width: 75px;
     height: 75px;
     float: left;
-    
+
 }
 
-aside .sidebar-forecast .sidebar-forecast-open .side-forecast-img img{
+#aside .sidebar-forecast .sidebar-forecast-open .side-forecast-img img{
     width: 100%;
 }
 
-aside .sidebar-forecast .sidebar-forecast-open .side-day{
+#aside .sidebar-forecast .sidebar-forecast-open .side-day{
     width: 100%;
     line-height: 40px;
     font-size: 25px;
@@ -143,127 +204,104 @@ aside .sidebar-forecast .sidebar-forecast-open .side-day{
     clear: both;
 }
 
-aside:hover{
-    left: 0px;
-    -webkit-transition: left 1.5s;
-    -moz-transition: left 1.5s;
-    -o-transition: left 1.5s;
-    transition: left 1.5s;
-    transition-timing-function: ease;
-}
-
-/*dont working.need to fix*/
-aside:hover .wrapper{
-    -ms-transform: translateX(115px);
-    -webkit-transform: translateX(115px);
-    transform: translateX(115px);
-}
-/*dont working.need to fix*/
-
-aside:hover .sidebar-button .button-right{
-    display: none;
-    -webkit-transition: display 1.5s;
-    -moz-transition: display 1.5s;
-    -o-transition: display 1.5s;
-    transition: display 1.5s;
-}
-
-aside:hover .sidebar-button .button-left{
-    display: block;
-    -webkit-transition: display 1.5s;
-    -moz-transition: display 1.5s;
-    -o-transition: display 1.5s;
-    transition: display 1.5s;
-}
-
 
 /* end sidebar */
 
 /* header */
 
-header{
-    width: 1024px;
-    max-width: 75%;
-    height: 75px;
+.container {
+    max-width: 1024px;
     margin: 0 auto;
-    margin-bottom: 65px;
-    padding-top: 15px;
 }
-
-header a.container-head{
-    display:block;
-}
-
-a:visited{
-	color: #4D4D4D;;
-}
-
-
-header:after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
-header .logo{
+.poll-left {
     float: left;
-    height: 100px;
 }
-
-header .logo img{
-    height: 100px;
-    float: left;
-    margin-right: 30px;
-}
-
-header .logo .logo-capt{
-    height: 50px;
-    float: left;
-    padding-top: 40px;
-}
-
-header .logo .logo-capt p{
-    font-size: 26px;
-}
-
-header form{
+.poll-right {
     float: right;
-    padding-top: 40px;
-    height: 50px;
-    background-color: none;
 }
 
-header form input[name="location"]{
-    width: 300px;
-    height: 47px;
-    padding: 10px;
-    padding-left: 15px;
-    font-size: 20px;
-    font-family: "Neucha",cursive,Arial;
-    position: relative;
-    right: -55px;
-    top: 3px;
-    border-radius: 5px;
-    border: none;
+#header{
+    min-height: 155px;
+    padding: 20px 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    
 }
 
-header form input[name="submit"]{
-    height: 45px;
-    width: 45px;
+
+#header a:visited{
+    color: #4D4D4D;;
+}
+
+
+
+#header .logo{
+    text-decoration: none;
+}
+
+#header .logo img{
+    height: 100px;
+    margin-right: 30px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+#header .logo .logo-capt{
+    height: 50px;
+    display: inline-block;
+    vertical-align: bottom;
+    padding-bottom: 10px;
+}
+
+#header .logo .logo-capt p{
+    font-size: 26px;
+}
+
+#header .search-form {
+    background-color: transparent;
+    width: 300px;
     position: relative;
+    margin-top: 37px;
+}
+
+#header .search-form input:focus {
+    outline: none;
+}
+
+
+#header .search-form input[name="location"]{
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    height: 50px;
+    font-family: "Neucha", cursive, Arial;
+    padding: 15px 60px 9px 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#header .search-form input[name="submit"]{
     top: 2px;
-    background-color: white;
+    right: 5px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    position: absolute;
+    background-color: transparent;
     background-image: url('../img/search-ico.png');
     background-repeat: no-repeat;
     background-position: -55px 0px;
-    border: none;
 }
 
-header form input[name="submit"]:hover{
+
+
+
+
+#header .search-form input[name="submit"]:hover{
     background-position: -2px 0px;
     cursor: pointer;
 }
@@ -272,83 +310,106 @@ header form input[name="submit"]:hover{
 
 /* forecast content */
 
-main{
-    width: 1024px;
-    max-width: 75%;
-    margin: 0 auto;
+#main{
+    position: relative;
+    padding-bottom: 100px;
 }
 
-main .nav-button{
+#main .nav-button{
     width: 100%;
     height: 50px;
-    background-color: green;
+        margin-bottom: 20px;
+}
+#main .nav-button ul{
+    height: inherit;
 }
 
-main .arrow-up{
-    margin-bottom: 20px;
-}
-
-main .arrow-down{
-    margin-top: 20px;
-}
-
-main .nav-button .arrow{
-    width: 200px;
+#main .nav-button .arrow{
+    width: 100%;
     height: 30px;
+    height: inherit;
     margin: 0px auto;
-    background-image: url('../img/arrow.png');
-    background-repeat: no-repeat;
-    background-size: 200px 70px;
-}
-
-main .arrow-up .arrow{
-    background-position: 0px 0px;
-}
-
-main .arrow-down .arrow{
-    background-position: 0px -40px;
-}
-
-main .nav-button .arrow-capt{
-    width: 200px;
-    line-height: 20px;
     text-align: center;
-    margin: 0px auto;
     font-size: 18px;
 }
+#main .nav-button .arrow a:before{
+    background: url('../img/arrow.png') center top  no-repeat;
+    background-size: 200px 70px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 30px;
+    width: 200px;
+    left: 0;
+}
+#main .nav-button .arrow:hover a:before{
+    background-position: center 2px;
+}
+#main .nav-button .arrow a{
+    color: #4D4D4D;
+    padding-top: 33px;
+    display: block;
+    text-decoration: none;
+    position: relative;
+}
+
+#main .arrow-down .arrow a{
+    padding-top: 0;
+    padding-bottom: 30px;
+    display: block;
+}
+
+#main .arrow-down .arrow a:before{
+    background-position: 0px -40px;
+    top: initial;
+    bottom: 0;
+}
+#main .arrow-down .arrow:hover a:before{
+    background-position: 0px -41px;
+
+}
 
 
-main .forecast-box{
+#main .nav-button.arrow-down{}
+
+
+
+
+
+#main .forecast-box{
     width: 100%;
     height: 300px;
     background-color: yellow;
+    margin-bottom: 20px;
 }
 
-main .forecast-box .forecast-date{
+#main .forecast-box .forecast-date{
     width: 100%;
     height: 60px;
 }
 
-main .forecast-box .forecast-date .day-active,
-main .forecast-box .forecast-date .data-active{
+#main .forecast-box .forecast-date .day-active,
+#main .forecast-box .forecast-date .data-active{
     line-height: 30px;
-    font-size: 24px;    
+    font-size: 24px;
 }
 
-main .forecast-box .forecast-img{
+#main .forecast-box .forecast-img{
     width: 280px;
     height: 190px;
     max-width: 33%;
     float:left;
 }
 
-main .forecast-box .forecast-img img{
+#main .forecast-box .forecast-img img{
     width: 150px;
     height: 150px;
     margin: 0 auto;
 }
 
-main .forecast-box .forecast-img p{
+#main .forecast-box .forecast-img p{
     line-height: 30px;
     text-align: center;
 }
@@ -358,11 +419,15 @@ main .forecast-box .forecast-img p{
 
 /* footer */
 
-footer{
-    width: 1024px;
-    max-width: 75%;
-    margin: 0 auto;
-
+#footer{
+    margin: 0;
+    height: 100px;
+    margin-top: -100px;
+    padding-left: 150px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 10px;
 }
 
 /* end footer */

@@ -1,121 +1,136 @@
 <!doctype html>
 <html>
   <head>
-    <title>Postcard weather forecast</title>
-    <meta charset="utf-8">
-    <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+      <title>Postcard weather forecast</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- css -->
+      <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="css/reset.css">
+      <link rel="stylesheet" href="css/style.css">
+      <!-- ico -->
+      <!--add favicon here -->
   </head>
-  <body>
-<!-- Sidebar -->
-    <aside>
-      <div class="sidebar-button">
-        <img class="button-left" src="img/button-left.png" alt="button off"></img>
-        <img class="button-right" src="img/button-right.png" alt="button on"></img>
-      </div>
-      <div class="sidebar-forecast-box">
-        <div class="sidebar-forecast">
-          <div class="sidebar-forecast-open">
-            <div class="side-temp">45&deg</div>
-            <div class="side-forecast-img">
-              <img src="img/forecast-img-s/cloud_thunder.png"></img>
-            </div>
-            <p class="side-day">Friday</p>  
+<body>
+    <!-- Sidebar -->
+    <aside id="aside" class="clearfix">
+        <div class="test">
+          <div class="sidebar-button">
+              <img class="button-right" src="img/button-right.png" alt="button on">
           </div>
-          <div class="sidebar-forecast-close">
-            <img src="img/forecast-img-s/cloud_sun_rain_snow.png"></img>
-            <div class="side-data-sm">26.07</div>
+          <div class="sidebar-forecast-box">
+              <div class="sidebar-forecast">
+                  <div class="sidebar-forecast-open">
+                      <div class="side-temp">45&deg</div>
+                      <div class="side-forecast-img">
+                          <img src="img/forecast-img-s/cloud_thunder.png">
+                      </div>
+                      <p class="side-day">Friday</p>
+                  </div>
+                  <div class="sidebar-forecast-close">
+                      <img src="img/forecast-img-s/cloud_sun_rain_snow.png">
+                      <div class="side-data-sm">26.07</div>
+                  </div>
+              </div>
+              <div class="sidebar-forecast">
+                  <div class="sidebar-forecast-open">
+                      <div class="side-temp">5&deg</div>
+                      <div class="side-forecast-img">
+                          <img src="img/forecast-img-s/sun.png">
+                      </div>
+                      <p class="side-day">Saturday</p>
+                  </div>
+                  <div class="sidebar-forecast-close">
+                      <img src="img/forecast-img-s/thundershtorm.png">
+                      <div class="side-data-sm">28.07</div>
+                  </div>
+              </div>
+              <div class="sidebar-forecast">
+                  <div class="sidebar-forecast-open">
+                      <div class="side-temp">29&deg</div>
+                      <div class="side-forecast-img">
+                          <img src="img/forecast-img-s/cloud_sun.png">
+                      </div>
+                      <p class="side-day">Sunday</p>
+                  </div>
+                  <div class="sidebar-forecast-close">
+                      <img src="img/forecast-img-s/sun.png">
+                      <div class="side-data-sm">28.07</div>
+                  </div>
+              </div>
           </div>
         </div>
-        <div class="sidebar-forecast">
-          <div class="sidebar-forecast-open">
-            <div class="side-temp">5&deg</div>
-            <div class="side-forecast-img">
-              <img src="img/forecast-img-s/sun.png"></img>
-            </div>
-            <p class="side-day">Saturday</p>
-          </div>
-          <div class="sidebar-forecast-close">
-            <img src="img/forecast-img-s/thundershtorm.png"></img>
-            <div class="side-data-sm">28.07</div>
-          </div>
-        </div>
-        <div class="sidebar-forecast">
-          <div class="sidebar-forecast-open">
-            <div class="side-temp">29&deg</div>
-            <div class="side-forecast-img">
-              <img src="img/forecast-img-s/cloud_sun.png"></img>
-            </div>
-            <p class="side-day">Sunday</p>
-          </div>
-          <div class="sidebar-forecast-close">
-            <img src="img/forecast-img-s/sun.png"></img>
-            <div class="side-data-sm">28.07</div>
-          </div>
-        </div>
-      </div>
     </aside>
-<!-- End sidebar -->
-
+    <!-- End sidebar -->
     <div class="wrapper">
-      <header>
-        <div href="index.html" class="container-head">
-          <a href="index.html" class="logo">
-            <img src="img/logo.png"></img>
-            <div class="logo-capt">
-              <p>POSTCARD</p>
-              <p>weather forecast</p>
+        <header id="header">
+            <div class="container">
+                <div class="poll-left">
+                    <a href="index.html" class="logo">
+                        <img src="img/logo.png">
+                        <div class="logo-capt">
+                            <p>POSTCARD</p>
+                            <p>weather forecast</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="poll-right">
+                    <form method="post" action="" class="search-form">
+                        <input type="text" name="location" value="" placeholder="search for location">
+                        <input type="submit" name="submit" value="">
+                    </form>
+                </div>
             </div>
-          </a>
-          <form method="post" action="">
-            <input type="text" name="location" value="" placeholder="search for location">
-            <input type="submit" name="submit" value="">
-          </form>
-        </div>
-      </header>  
-      
-      <main>
-        <nav class="nav-button arrow-up">
-          <div class="arrow"></div>
-          <div class="arrow-capt">Tomorrow</div>
-        </nav>
-        <div class="forecast-box">
-          <div class="forecast-date">
-              <div class="day-active">Thursday</div>
-              <div class="data-active">25 november</div>
-          </div>
-          <div class="forecast-img" width="200px" height="200px">
-            <img src="img/forecast-img/snow-rain.png" alt="weather icon"></img>
-            <p>Rain whith snow</p>
-          </div>
-           <form action="">
-            <input type="text" name="date" value="" placeholder="date">
-            <input type="submit" value="Submit">
-          </form>
-          <div class="button-box">
-            <div class="button-temp"></div>
-            <div class="button-rain"></div>
-            <div class="button-wind"></div>
-          </div>
-          <div class="chart-box">
-            <div class="chart"></div>
-            <div class="chart-capt-box">
-              <div class="chart-capt">Morning</div>
-              <div class="chart-capt">Day</div>
-              <div class="chart-capt">Evening</div>
-              <div class="chart-capt">Night</div>
+        </header>
+        <main id="main">
+            <div class="container">
+                <nav class="nav-button arrow-up">
+                    <ul>
+                        <li class="arrow"><a href="" title="">Tomorrow</a></li>
+                    </ul>
+                </nav>
+                <div class="forecast-box clearfix">
+                    <div class="forecast-date">
+                        <div class="day-active">Thursday</div>
+                        <div class="data-active">25 november</div>
+                    </div>
+                    <div class="forecast-img" width="200px" height="200px">
+                        <img src="img/forecast-img/snow-rain.png" alt="weather icon" />
+                        <p>Rain whith snow</p>
+                    </div>
+                    <form action="">
+                        <input type="text" name="date" value="" placeholder="date">
+                        <input type="submit" value="Submit">
+                    </form>
+                    <div class="button-box">
+                        <div class="button-temp"></div>
+                        <div class="button-rain"></div>
+                        <div class="button-wind"></div>
+                    </div>
+                    <div class="chart-box">
+                        <div class="chart"></div>
+                        <div class="chart-capt-box">
+                            <div class="chart-capt">Morning</div>
+                            <div class="chart-capt">Day</div>
+                            <div class="chart-capt">Evening</div>
+                            <div class="chart-capt">Night</div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="nav-button arrow-down">
+                    <ul>
+                        <li class="arrow"><a href="" title="">Friday</a></li>
+                    </ul>
+                </nav>
             </div>
-          </div>
-        </div>
-        <nav class="nav-button arrow-down">
-          <div class="arrow-capt">Friday</div>
-          <div class="arrow"></div>
-        </nav>
-      </div>
-      </main>
+        </main>
     </div>
-  </body>
-  <footer>
-    <div class="copyright">Created by Roman Kuchkuda, 2015</div>
-  </footer>
+    <footer id="footer">
+      <div class="container">
+        <div class="copyright">Created by Roman Kuchkuda, 2015</div>
+      </div>
+    </footer>
+</body>
+
+</html>

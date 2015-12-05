@@ -44,7 +44,7 @@ table {
 }
 /* End of Eric Meyer's CSS Reset */
 
-html {
+html, body {
 	height: 100%;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -54,19 +54,17 @@ a{
   display: inline-block;
 }
 
-a:visited{
-	color: inherit;
-}
-
-.clearfix {
+.clearfix, .container {
   zoom: 1;
   -ms-zoom: 1;
 }
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after, .container:before, .container:after,
+ {
   content: "";
   display: table;
 }
-.clearfix:after {
+.clearfix:after, .container:after
+ {
   clear: both;
 }
+
