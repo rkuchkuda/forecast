@@ -1,4 +1,4 @@
-$( document ).ready(function() {
-    $( "input[name=date]" ).datepicker();
+jQuery( document ).ready(function() {
+    jQuery( ".date-piker" ).datepicker();
 });
 
