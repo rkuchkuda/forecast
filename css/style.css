@@ -359,10 +359,13 @@ body{
     width: 100%;
     height: 300px;
     margin-bottom: 20px;
-    background-color: transparent; /*del*/
+    background-image: url('../img/postcard-background.jpg');
+    background-repeat: repeat-x;
+    
 }
 
 #main .forecast-box .forecast-date{
+    display: inline-block;
     width: 300px;
     height: 60px;
     text-align: center;
@@ -375,9 +378,9 @@ body{
 }
 
 #main .forecast-box .forecast-img{
+    display: inline-block;
     width: 300px;
     height: 190px;
-    max-width: 33%;
     text-align: center;
 }
 
@@ -395,26 +398,26 @@ body{
     width: 300px;
 }
 
-#main .date-form {
+#main .forecast-box .date-form {
     background-color: transparent;
-    width: 300px;
+    width: 250px;
     position: relative;
-    margin-top: 0px;
+    margin: 0 auto;
 }
 
-#main .date-form input:focus {
+#main .forecast-box .date-form input:focus {
     outline: none;
 }
 
 
-#main .date-form input[name="date"]{
+#main .forecast-box .date-form input[name="date"]{
     width: 100%;
     border: none;
     font-size: 20px;
     height: 50px;
     font-family: "Neucha", cursive, Arial;
     text-align: center;
-    padding: 15px 15px 9px 15px;
+    padding: 10px 30px;
     background-color: transparent;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -424,25 +427,105 @@ body{
     border-radius: 5px;
 }
 
-#main .date-form input[name="submit"]{  /*decide what to do whith submit*/
+#main .forecast-box .date-form input[name="submit"]{  
     top: 2px;
-    right: 5px;
-    width: 45px;
+    left: 5px;
+    width: 25px;
     height: 45px;
-    border: none;
+    border: medium none;
     position: absolute;
     background-color: transparent;
-    background-image: url('');
+    background-image: url("../img/search-date-ico.png");
     background-repeat: no-repeat;
-    background-position: -55px 0px;
+    background-position: 2px 13px;
+    background-size: 20px auto;
     
 }
 
-#main .date-form input[name="submit"]:hover{
-    background-position: -2px 0px;
+#main .forecast-box .date-form input[name="submit"]:hover{
+    background-position: 2px 11px;
     cursor: pointer;
 }
 
+#main .forecast-box .button-box{ /* bug висота має бути 60. але чомусь навколо елемента є рамка, яку я не можу забрати */
+    display: inline-block;
+    width: 420px;
+    height: 50px;
+    
+}
+
+#main .forecast-box .button-box ul{
+    
+}
+
+#main .forecast-box .button-box ul li{
+    display: inline-block;
+    width: 120px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 13px;
+    border-radius: 5px;
+    border: 2px solid gray;
+}
+
+#main .forecast-box .button-box ul li.active{
+    background-color:  #0A94C2;
+    color: white;
+    border-color: white;
+}
+
+#main .forecast-box .button-box ul li:hover{
+    background-color:  #0A94C2;
+    color: white;
+    border-color: white;
+}
+
+#main .forecast-box .button-box ul li:last-child{
+    margin-right: none;
+}
+
+#main .forecast-box .button-box .button-rain{
+    
+}
+
+#main .forecast-box .button-box .button-wind{
+    
+}
+
+
+.postcard-img-box{
+    float: right;
+    width: 230px;
+    height: 300px;
+}
+
+.postcard-img-box img{
+    height: 300px;
+}
+
+.chart-box{
+    display: inline-block;
+    width: 420px;
+    height: 270px;
+}
+
+
+.chart-box img{
+    width: 420px;
+    height: 210px;
+}
+    
+.chart-capt-box {
+    width: 420px;
+    height: 30px;
+}
+
+.chart-capt-box p{
+    display: inline-block;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+}
 /* end forecast-box*/
     
 /* end forecast content */
