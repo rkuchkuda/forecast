@@ -10,4 +10,11 @@ $( document ).ready(function() {
         
     });
     
+    $('#aside').mouseenter(function() {
+        $(this).closest('body').addClass('open');
+    });
+    $('#aside').mouseleave(function() {
+        $(this).closest('body').removeClass('open');
+    });
+    
 });

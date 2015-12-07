@@ -4,7 +4,22 @@ body{
     font-family: 'Neucha', cursive, Arial;
 }
 
+body.open {
+    overflow-x: hidden;
+    transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+body.open .wrapper, body.open #footer{
+    transform: translateX(115px);
+    -ms-transform: translateX(115px);
+    -webkit-transform: translateX(115px);
+}
+
 .wrapper{
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0 auto;
@@ -22,6 +37,7 @@ body{
     -ms-transform: translateX(0px);
     -webkit-transform: translateX(0px);
 }
+
 .wrapper.open{
     transform: translateX(115px);
     -ms-transform: translateX(115px);
@@ -320,9 +336,11 @@ body{
     width: 200px;
     left: 0;
 }
+
 #main .nav-button .arrow:hover a:before{
     background-position: center 2px;
 }
+
 #main .nav-button .arrow a{
     color: #4D4D4D;
     padding-top: 33px;
@@ -342,6 +360,7 @@ body{
     top: initial;
     bottom: 0;
 }
+
 #main .arrow-down .arrow:hover a:before{
     background-position: 0px -41px;
 
@@ -530,6 +549,11 @@ body{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding-right: 10px;
+    transition: transform 1.5s;
+    -o-transition: transform 1.5s;
+    -moz-transition: transform 1.5s;
+    -webkit-transition: transform 1.5s;
+    position: relative;
 }
 
 /* end footer */
