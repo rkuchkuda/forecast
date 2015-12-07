@@ -24,7 +24,7 @@
                   <div class="sidebar-forecast-open">
                       <div class="side-temp">45&deg</div>
                       <div class="side-forecast-img">
-                          <img src="img/forecast-img-s/cloud_thunder.png">
+                          <img src="img/forecast-img-s/cloud_sun_rain_snow.png">
                       </div>
                       <p class="side-day">Friday</p>
                   </div>
@@ -42,7 +42,7 @@
                       <p class="side-day">Saturday</p>
                   </div>
                   <div class="sidebar-forecast-close">
-                      <img src="img/forecast-img-s/thundershtorm.png">
+                      <img src="img/forecast-img-s/sun.png">
                       <div class="side-data-sm">28.07</div>
                   </div>
               </div>
@@ -50,12 +50,12 @@
                   <div class="sidebar-forecast-open">
                       <div class="side-temp">29&deg</div>
                       <div class="side-forecast-img">
-                          <img src="img/forecast-img-s/cloud_sun.png">
+                          <img src="img/forecast-img-s/thundershtorm.png">
                       </div>
                       <p class="side-day">Sunday</p>
                   </div>
                   <div class="sidebar-forecast-close">
-                      <img src="img/forecast-img-s/sun.png">
+                      <img src="img/forecast-img-s/thundershtorm.png">
                       <div class="side-data-sm">28.07</div>
                   </div>
               </div>
@@ -91,42 +91,45 @@
                     </ul>
                 </nav>
                 <div class="forecast-box clearfix">
-                    <div class="postcard-img-box">
-                        <img src="img/postcard-img-rain.jpg"></img>
-                    </div>
-                    <div class="forecast-date">
-                        <div class="day-active">Thursday</div>
-                        <div class="data-active">25 november</div>
-                    </div>
-                    <nav class="button-box">
-                        <ul>
-                            <li class="button-temp, active">Temperature</li>
-                            <li class="button-rain">Rain</li>
-                            <li class="button-wind">Wind</li>
-                        </ul>
-                    </nav>
-                    <div class="forecast-img">
-                        <img src="img/forecast-img/snow-rain.png" alt="weather icon" />
-                        <p>Rain whith snow</p>
-                    </div>
-                    <div class="chart-box">
-                        <div class="chart">
-                            <img src="img/chart.png"></img>
+                    <div class="forecast-box-left">
+                        <div class="forecast-date">
+                            <div class="day-active">Thursday</div>
+                            <div class="data-active">25 november</div>
+                        </div>    
+                        <div class="forecast-img">
+                            <img src="img/forecast-img/snow-rain.png" alt="weather icon" />
+                            <p>Rain whith snow</p>
                         </div>
-                        <div class="chart-capt-box">
-                            <p class="chart-capt">Morning</p>
-                            <p class="chart-capt">Day</p>
-                            <p class="chart-capt">Evening</p>
-                            <p class="chart-capt">Night</p>
-                        </div>
+                        <div class="date-form-box">
+                          <form method="get"  action="/" class="date-form">
+                              <input type="date" placeholder="search for date"  name="date">
+                              <input type="submit" name="submit" value="">
+                          </form>
+                        </div>    
                     </div>
-                    <div class="date-form-box">
-                      <form method="get"  action="/" class="date-form">
-                          <input type="date" placeholder="search for date"  name="date">
-                          <input type="submit" name="submit" value="">
-                      </form>
+                    <div class="forecast-box-middle">
+                        <nav class="button-box">
+                            <ul>
+                                <li class="active">Temperature</li>
+                                <li>Rain</li>
+                                <li>Wind</li>
+                            </ul>
+                        </nav>
+                        <div class="chart-box">
+                            <div class="chart">
+                                <img src="img/chart.png"></img>
+                            </div>
+                            <div class="chart-capt-box">
+                                <p class="chart-capt">Morning</p>
+                                <p class="chart-capt">Day</p>
+                                <p class="chart-capt">Evening</p>
+                                <p class="chart-capt">Night</p>
+                            </div>
+                        </div>    
                     </div>
-                    
+                    <div class="forecast-box-right">
+                        <img src="img/postcard/postcard-img-snow.png"></img>
+                    </div>
                 </div>
                 <nav class="nav-button arrow-down">
                     <ul>

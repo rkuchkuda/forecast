@@ -357,16 +357,25 @@ body{
 
 #main .forecast-box{
     width: 100%;
-    height: 300px;
+    min-height: 370px;
     margin-bottom: 20px;
-    background-image: url('../img/postcard-background.jpg');
-    background-repeat: repeat-x;
-    
+    padding: 15px;
+    overflow: hidden;
+    background-image: url('../img/postcard/postcard-background-2.png');
+    box-shadow: 0px 0px 3px #D1D1D1;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#main .forecast-box .forecast-box-left{
+    display: inline-block;
+    width: 250px;
+    height: 340px;
 }
 
 #main .forecast-box .forecast-date{
-    display: inline-block;
-    width: 300px;
+    width: 100%;
     height: 60px;
     text-align: center;
 }
@@ -378,10 +387,13 @@ body{
 }
 
 #main .forecast-box .forecast-img{
-    display: inline-block;
-    width: 300px;
-    height: 190px;
+    width: 100%;
+    height: 230px;
+    padding: 25px 0;
     text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 #main .forecast-box .forecast-img img{
@@ -395,7 +407,7 @@ body{
 }
 
 #main .forecast-box .date-form-box{
-    width: 300px;
+    width: 100%;
 }
 
 #main .forecast-box .date-form {
@@ -447,23 +459,28 @@ body{
     cursor: pointer;
 }
 
-#main .forecast-box .button-box{ /* bug висота має бути 60. але чомусь навколо елемента є рамка, яку я не можу забрати */
+#main .forecast-box .forecast-box-middle{
     display: inline-block;
     width: 420px;
-    height: 50px;
-    
+    height: 340px;
+}
+
+
+#main .forecast-box .button-box{ 
+    width: 100%;
+    height: 60px;
 }
 
 #main .forecast-box .button-box ul{
-    
+    padding: 13px 0;
 }
 
 #main .forecast-box .button-box ul li{
     display: inline-block;
-    width: 120px;
+    width: 100px;
     line-height: 30px;
     text-align: center;
-    margin-right: 13px;
+    margin-right: 15px;
     border-radius: 5px;
     border: 2px solid gray;
 }
@@ -484,48 +501,41 @@ body{
     margin-right: none;
 }
 
-#main .forecast-box .button-box .button-rain{
-    
-}
-
-#main .forecast-box .button-box .button-wind{
-    
-}
-
-
-.postcard-img-box{
-    float: right;
-    width: 230px;
-    height: 300px;
-}
-
-.postcard-img-box img{
-    height: 300px;
-}
-
-.chart-box{
+#main .forecast-box .chart-box{
     display: inline-block;
-    width: 420px;
-    height: 270px;
+    width: 100%;
+    height: 100%;
 }
 
 
-.chart-box img{
-    width: 420px;
+#main .forecast-box .chart-box img{
+    width: 100%;
     height: 210px;
 }
     
-.chart-capt-box {
-    width: 420px;
+#main .forecast-box .chart-capt-box {
+    width: 100%;
     height: 30px;
 }
 
-.chart-capt-box p{
+#main .forecast-box .chart-capt-box p{
     display: inline-block;
-    width: 100px;
+    width: 50px;
     line-height: 30px;
     text-align: center;
 }
+
+#main .forecast-box .forecast-box-right{
+    display: inline-block;
+    width: 250px;
+    height: 100%;
+    float: right;
+}
+
+#main .forecast-box .forecast-box-right img{
+    width: 100%;
+}
+
 /* end forecast-box*/
     
 /* end forecast content */
