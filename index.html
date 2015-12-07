@@ -76,8 +76,8 @@
                     </a>
                 </div>
                 <div class="poll-right">
-                    <form method="get" action="" class="search-form">
-                        <input type="text" name="location" value="" placeholder="search for location">
+                    <form class="search-form">
+                        <input type="text" name="q" value="" placeholder="search for location">
                         <input type="submit" name="submit" value="">
                     </form>
                 </div>
@@ -100,32 +100,59 @@
                             <img src="img/forecast-img/snow-rain.png" alt="weather icon" />
                             <p>Rain whith snow</p>
                         </div>
-                        <div class="date-form-box">
-                          <form method="get"  action="/" class="date-form">
-                              <input type="date" placeholder="search for date"  name="date">
-                              <input type="submit" name="submit" value="">
-                          </form>
+                        <div class="location-box">
+                          <p>Lviv</p>
                         </div>    
                     </div>
                     <div class="forecast-box-middle">
                         <nav class="button-box">
                             <ul>
-                                <li class="active">Temperature</li>
-                                <li>Rain</li>
-                                <li>Wind</li>
+                                <li class="active" data-name="temperature">
+                                    <a href="">Temperature</a>
+                                </li>
+                                <li data-name="rain">
+                                    <a href="">Rain</a>
+                                    </li>
+                                <li data-name="wind">
+                                    <a href="">Wind</a>
+                                </li>
                             </ul>
                         </nav>
                         <div class="chart-box">
-                            <div class="chart">
-                                <img src="img/chart.png"></img>
+                            <div class="chart-box-item temperature active">
+                                <div class="chart">
+                                    <img src="img/chart.png"></img>
+                                </div>
+                                <div class="chart-capt-box">
+                                    <p class="chart-capt">Morning1</p>
+                                    <p class="chart-capt">Day1</p>
+                                    <p class="chart-capt">Evening1</p>
+                                    <p class="chart-capt">Night1</p>
+                                </div>
                             </div>
-                            <div class="chart-capt-box">
-                                <p class="chart-capt">Morning</p>
-                                <p class="chart-capt">Day</p>
-                                <p class="chart-capt">Evening</p>
-                                <p class="chart-capt">Night</p>
+                            <div class="chart-box-item rain">
+                                <div class="chart">
+                                    <img src="img/chart.png"></img>
+                                </div>
+                                <div class="chart-capt-box">
+                                    <p class="chart-capt">Morning2</p>
+                                    <p class="chart-capt">Day2</p>
+                                    <p class="chart-capt">Evening2</p>
+                                    <p class="chart-capt">Night2</p>
+                                </div>
                             </div>
-                        </div>    
+                            <div class="chart-box-item wind">
+                                <div class="chart">
+                                    <img src="img/chart.png"></img>
+                                </div>
+                                <div class="chart-capt-box">
+                                    <p class="chart-capt">Morning3</p>
+                                    <p class="chart-capt">Day</p>
+                                    <p class="chart-capt">Evening</p>
+                                    <p class="chart-capt">Night</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="forecast-box-right">
                         <img src="img/postcard/postcard-img-snow.png"></img>
@@ -144,5 +171,7 @@
         <div class="copyright">Created by Roman Kuchkuda, 2015</div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+    <script src="js/main.js"></script> 
 </body>
 </html>

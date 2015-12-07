@@ -249,7 +249,7 @@ body{
 }
 
 
-#header .search-form input[name="location"]{
+#header .search-form input[name="q"]{
     width: 100%;
     border: none;
     font-size: 20px;
@@ -360,7 +360,8 @@ body{
     min-height: 370px;
     margin-bottom: 20px;
     padding: 15px;
-    overflow: hidden;
+    font-size: 0px;
+    text-align: center;
     background-image: url('../img/postcard/postcard-background-2.png');
     box-shadow: 0px 0px 3px #D1D1D1;
     -webkit-box-sizing: border-box;
@@ -369,9 +370,10 @@ body{
 }
 
 #main .forecast-box .forecast-box-left{
-    display: inline-block;
-    width: 250px;
-    height: 340px;
+    display:  inline-block;
+    width: 25.15%;
+    font-size: 16px;
+    vertical-align: top;  
 }
 
 #main .forecast-box .forecast-date{
@@ -406,69 +408,28 @@ body{
     text-align: center;
 }
 
-#main .forecast-box .date-form-box{
+#main .forecast-box .location-box{
     width: 100%;
-}
-
-#main .forecast-box .date-form {
-    background-color: transparent;
-    width: 250px;
-    position: relative;
-    margin: 0 auto;
-}
-
-#main .forecast-box .date-form input:focus {
-    outline: none;
-}
-
-
-#main .forecast-box .date-form input[name="date"]{
-    width: 100%;
-    border: none;
-    font-size: 20px;
-    height: 50px;
-    font-family: "Neucha", cursive, Arial;
-    text-align: center;
-    padding: 10px 30px;
-    background-color: transparent;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-#main .forecast-box .date-form input[name="submit"]{  
-    top: 2px;
-    left: 5px;
-    width: 25px;
-    height: 45px;
-    border: medium none;
-    position: absolute;
-    background-color: transparent;
-    background-image: url("../img/search-date-ico.png");
-    background-repeat: no-repeat;
-    background-position: 2px 13px;
-    background-size: 20px auto;
-    
-}
-
-#main .forecast-box .date-form input[name="submit"]:hover{
-    background-position: 2px 11px;
-    cursor: pointer;
+    font-size: 24px;
 }
 
 #main .forecast-box .forecast-box-middle{
     display: inline-block;
-    width: 420px;
-    height: 340px;
+    position: relative;
+    width: 49.7%;
+    min-width: 24.41%;
+    padding: 0 20px;
+    padding-bottom: 30px;
+    font-size: 16px;
+    vertical-align: top;
+    box-sizing: border-box;
 }
 
 
 #main .forecast-box .button-box{ 
     width: 100%;
     height: 60px;
+    margin-bottom: 39px
 }
 
 #main .forecast-box .button-box ul{
@@ -483,6 +444,12 @@ body{
     margin-right: 15px;
     border-radius: 5px;
     border: 2px solid gray;
+}
+
+#main .forecast-box .button-box ul li a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 #main .forecast-box .button-box ul li.active{
@@ -508,6 +475,14 @@ body{
 }
 
 
+#main .forecast-box .chart-box .chart-box-item{
+    display: none;
+}
+
+#main .forecast-box .chart-box .chart-box-item.active{
+    display: block;
+}
+
 #main .forecast-box .chart-box img{
     width: 100%;
     height: 210px;
@@ -515,21 +490,26 @@ body{
     
 #main .forecast-box .chart-capt-box {
     width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     height: 30px;
+    display: table;
 }
 
 #main .forecast-box .chart-capt-box p{
-    display: inline-block;
+    display: table-cell;
     width: 50px;
-    line-height: 30px;
+    padding: 14px 0 0;
+    line-height: 16px;
     text-align: center;
 }
 
 #main .forecast-box .forecast-box-right{
     display: inline-block;
-    width: 250px;
-    height: 100%;
-    float: right;
+    width: 25.15%;
+    font-size: 16px;
+    vertical-align: top;
 }
 
 #main .forecast-box .forecast-box-right img{
