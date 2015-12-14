@@ -1,6 +1,7 @@
 function getWeatherData(lang, fnOK, fnError) {
     navigator.geolocation.getCurrentPosition(locSuccess, locError);
-
+    console.log( "ready!" );
+    
     function locSuccess(position) {
         // Check cache
         var cache = localStorage.weatherCache5x3 && JSON.parse(localStorage.weatherCache5x3);

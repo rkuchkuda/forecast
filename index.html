@@ -93,23 +93,21 @@
             <div class="container">
                 <nav class="nav-button arrow-up">
                     <ul>
-                        <li class="arrow"><a href="" title="">Tomorrow</a></li>
+                        <li class="arrow"><a class="previous" href="#" title="">Tomorrow</a></li>
                     </ul>
                 </nav>
 <!-- Forecast box -->
                 <div class="forecast-box clearfix">
                     <div class="forecast-box-left">
-                        <div class="forecast-date">
-                            <div class="day-active">Thursday</div>
-                            <div class="data-active">25 november</div>
-                        </div>    
-                        <div class="forecast-img">
-                            <img src="img/w/04n.png" alt="weather icon" />
-                            <p>Rain whith snow</p>
-                        </div>
-                        <div class="location-box">
-                          <p>Lviv</p>
-                        </div>    
+                        <!-- place del items heare -->
+                        <!-- <div id="weather"> -->
+                        	<a href="#" class="arrow previous">Previous</a>
+                        	<a href="#" class="arrow next">Next</a>
+                        	<ul id="scroller">
+                        		<!-- The forecast items will go here -->
+                        	</ul>
+                        	
+                        <!-- </div> -->
                     </div>
                     <div class="forecast-box-middle">
                         <nav class="button-box">
@@ -168,20 +166,20 @@
 <!-- End forecast box -->
                 <nav class="nav-button arrow-down">
                     <ul>
-                        <li class="arrow"><a href="" title="">Friday</a></li>
+                        <li class="arrow"><a class="next" href="#" title="">Friday</a></li>
                     </ul>
                 </nav>
             </div>
         </main>
     </div>
-    <footer id="footer">
+  <!--  <footer id="footer">
       <div class="container">
         <div class="copyright">Created by Roman Kuchkuda, 2015</div>
       </div>
-    </footer>
+    </footer> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
-    <script src="assets/js/weatherService.js"></script>
+    <script src="js/weatherService.js"></script>
     <script src="js/script.js"></script> 
 </body>
 </html>
