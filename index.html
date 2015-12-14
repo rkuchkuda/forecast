@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/favicon.ico">
+    <!--[if lt IE 9]>
+          <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
 <body>
 <!-- Sidebar -->
@@ -101,7 +104,7 @@
                             <div class="data-active">25 november</div>
                         </div>    
                         <div class="forecast-img">
-                            <img src="img/forecast-img/snow-rain.png" alt="weather icon" />
+                            <img src="img/w/04n.png" alt="weather icon" />
                             <p>Rain whith snow</p>
                         </div>
                         <div class="location-box">
@@ -128,10 +131,10 @@
                                     <img src="img/chart.png"></img>
                                 </div>
                                 <div class="chart-capt-box">
-                                    <p class="chart-capt">Morning1</p>
-                                    <p class="chart-capt">Day1</p>
-                                    <p class="chart-capt">Evening1</p>
-                                    <p class="chart-capt">Night1</p>
+                                    <p class="chart-capt">Morning</p>
+                                    <p class="chart-capt">Daytyme</p>
+                                    <p class="chart-capt">Evening</p>
+                                    <p class="chart-capt">Night</p>
                                 </div>
                             </div>
                             <div class="chart-box-item rain">
@@ -159,7 +162,7 @@
                         </div>
                     </div>
                     <div class="forecast-box-right">
-                        <img src="img/postcard/postcard-img-rain.png"></img>
+                        <img src="img/postcard/postcard-img-sun.png"></img>
                     </div>
                 </div>
 <!-- End forecast box -->
@@ -177,6 +180,8 @@
       </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-    <script src="js/main.js"></script> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+    <script src="assets/js/weatherService.js"></script>
+    <script src="js/script.js"></script> 
 </body>
 </html>
