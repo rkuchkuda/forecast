@@ -1,33 +1,5 @@
 $(function() {
-    console.log( "ready!" );
-
-// forecast data
-
-    // take data about geolocation
-    navigator.geolocation.getCurrentPosition(getWeatherData, error);
-   
-    function error(err) {
-      $('.forecast-box-left').html('<p>Please allow to take your geolocation or search weather forecast by city</p>');
-    }
-    
-    function getWeatherData(position){
-        $.getJSON('http://api.openweathermap.org/data/2.5/forecast?lat=' + position.coords.latitude + '&lon=' +
-                    position.coords.longitude + '&units=metric' + '&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6',
-            function(data){
-                var offset = (new Date()).getTimezoneOffset()*60*1000;
-        		var localTime = new Date( data.list[0].dt*1000 - offset);
-        		var currentDay = moment(localTime).calendar();
-        		var currentDate = moment(localTime).format('MMMM D');
-        	    console.log( currentDate );
-                $('#forecast-date').html('<div class="day-active">' + currentDay + '</div>' +
-                                        '<div class="data-active">' + currentDate + '</div>');
-                $('#forecast-img').html('<img src="img/w/' + data.list[0].weather[0].icon + '.png" alt="weather icon" />' + 
-                                        '<p>' + data.list[0].weather[0].description + '</p>');
-                $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
-            });
-    }
-    
-
+    console.log( 'ready!' );
 
 // buttons in chart-box. switch chart in box
     $('.button-box').on('click', 'a', function( event ) {
@@ -45,6 +17,102 @@ $(function() {
     $('#aside').mouseleave(function() {
         $(this).closest('body').removeClass('open');
     });
+
+// forecast data
+
+    // take data about geolocation
+    navigator.geolocation.getCurrentPosition(getWeatherData, error);
+   
+    function error(err) {
+      $('.forecast-box-left').html('<p>Please allow to take your geolocation or search weather forecast by city</p>');
+    }
+    
+    function getWeatherData(position){
+        $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + position.coords.latitude + '&lon=' +
+                    position.coords.longitude + '&units=metric' + '&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6',
+            function(data){
+                var offset = (new Date()).getTimezoneOffset()*60*1000;
+        		var localTime = new Date( data.list[0].dt*1000 - offset);
+        		var currentDay = moment(localTime).calendar();
+        		var currentDate = moment(localTime).format('MMMM D');
+        	    $('#forecast-date').html('<div class="day-active">' + currentDay + '</div>' +
+                                        '<div class="data-active">' + currentDate + '</div>');
+                $('#forecast-img').html('<img src="img/w/' + data.list[0].weather[0].icon + '.png" alt="weather icon" />' + 
+                                        '<p>' + data.list[0].weather[0].description + '</p>');
+                $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
+                
+                // chart for temperature 
+                /*var tempChartData = {
+        			labels : ['Morning','Daytime','Evening','Night'],
+        			datasets : [
+        				{
+        					label: 'Chart whith temperature',
+        					fillColor : 'white',
+        					strokeColor : '#0A94C2',
+        					pointColor : '#991C1F',
+        					pointStrokeColor : 'white',
+        					pointHighlightFill : '#EF292B',
+        					pointHighlightStroke : 'rgba(255,255,255,0.5)',
+        					data : [Math.round(data.list[0].temp.morn),
+        					        Math.round(data.list[0].temp.day),
+        					        Math.round(data.list[0].temp.eve),
+        					        Math.round(data.list[0].temp.night)],
+        				}
+        			]
+        
+        		}
+           	    var optionsTemp = 
+                    {
+                        tooltipTemplate: "<%= value %>",
+                        showTooltips: true,
+                        onAnimationComplete: function()
+                        {    
+                            this.showTooltip(this.datasets[0].points, true);          
+                        },
+                        tooltipEvents: []
+                    };
+        		var chartTemp = document.getElementById('chart-temp').getContext('2d');
+        	    new Chart(chartTemp).Line(tempChartData, optionsTemp, {
+        			responsive: true
+        		}); 
+        		*/
+        		// chart for pressure
+        	   var doughnutData = [
+    				{
+    					value: data.list[0].pressure,
+    					color:"#0A94C2",
+    					highlight: "#0A94C2",
+    					label: ""
+    				},
+    				{
+    					value: 50,
+    					color: "white",
+    					highlight: "white",
+    					label: ""
+    				},
+    			];
+           	    var optionsPressure = 
+                    {
+                        tooltipTemplate: "<%= value %>",
+                        showTooltips: true,
+                        onAnimationComplete: function()
+                        {    
+                            this.showTooltip(this.datasets[0].points, true);          
+                        },
+                        tooltipEvents: []
+                    };
+                    
+        		var chartPressure = document.getElementById('chart-pressure').getContext('2d');
+        	    new Chart(chartPressure).Doughnut(doughnutData, optionsPressure, {
+        			responsive: true
+        		});
+        				
+            });
+    }
+    
+
+
+
 
 
 
