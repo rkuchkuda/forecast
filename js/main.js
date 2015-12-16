@@ -2,20 +2,31 @@ $(function() {
     console.log( "ready!" );
 
 // forecast data
-    $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?q='+
-             'Newark'+
-             '&units=metric&cnt=7' + '&lang=' + 'en' + '&callback=?' + '&appid=2239135b18e8b5e093a144e55b94b5d6',
+
+    // take data about geolocation
+    navigator.geolocation.getCurrentPosition(getWeatherData, error);
+   
+    function error(err) {
+      $('.forecast-box-left').html('<p>Please allow to take your geolocation or search weather forecast by city</p>');
+    }
+    
+    function getWeatherData(position){
+        $.getJSON('http://api.openweathermap.org/data/2.5/forecast?lat=' + position.coords.latitude + '&lon=' +
+                    position.coords.longitude + '&units=metric' + '&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6',
             function(data){
-                $('#forecast-date').html('<div class="day-active">' + data.list[0].dt + '</div>' +
-                                        '<div class="data-active">' + data.list[0].dt + '</div>');
+                var offset = (new Date()).getTimezoneOffset()*60*1000;
+        		var localTime = new Date( data.list[0].dt*1000 - offset);
+        		var currentDay = moment(localTime).calendar();
+        		var currentDate = moment(localTime).format('MMMM D');
+        	    console.log( currentDate );
+                $('#forecast-date').html('<div class="day-active">' + currentDay + '</div>' +
+                                        '<div class="data-active">' + currentDate + '</div>');
                 $('#forecast-img').html('<img src="img/w/' + data.list[0].weather[0].icon + '.png" alt="weather icon" />' + 
                                         '<p>' + data.list[0].weather[0].description + '</p>');
                 $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
-                //$('#temptoday').html(data.list[0].temp.day);
-                //$('#temptomorrow').html(data.list[1].temp.day);
-                //$('#tempaftertomorrow').html(data.list[2].temp.day);
             });
-
+    }
+    
 
 
 // buttons in chart-box. switch chart in box
