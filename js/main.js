@@ -74,6 +74,8 @@ $(function() {
                                         '<p>' + data.list[0].weather[0].description + '</p>');
                 $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
                 $('#forecast-box-right').html('<img src="img/postcard/postcard-img-' + currentPostcard + '.png"></img>');
+                //$('#forecast-box-right').html('<img src="img/postcard/postcard-img-' + currentPostcard + '.png"></img>');
+                
                 $('.button-box').addClass('visible');
                 
                 // chart for temperature 
