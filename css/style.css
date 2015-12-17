@@ -218,6 +218,10 @@ body.open .wrapper, body.open #footer{
     box-sizing: border-box;
 }
 
+#header a{
+    color: #4D4D4D;
+}
+
 #header a:visited{
     color: #4D4D4D;
 }
