@@ -42,7 +42,8 @@ $(function() {
                 $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
                 
                 // chart for temperature 
-                /*var tempChartData = {
+               
+                var tempChartData = {
         			labels : ['Morning','Daytime','Evening','Night'],
         			datasets : [
         				{
@@ -63,7 +64,7 @@ $(function() {
         		}
            	    var optionsTemp = 
                     {
-                        tooltipTemplate: "<%= value %>",
+                        tooltipTemplate: "<%= value %>°",
                         showTooltips: true,
                         onAnimationComplete: function()
                         {    
@@ -75,38 +76,65 @@ $(function() {
         	    new Chart(chartTemp).Line(tempChartData, optionsTemp, {
         			responsive: true
         		}); 
-        		*/
-        		// chart for pressure
-        	   var doughnutData = [
+        		/*
+        		// chart for humidity
+                var humidityData = [
     				{
-    					value: data.list[0].pressure,
+    					value: data.list[0].humidity,
     					color:"#0A94C2",
     					highlight: "#0A94C2",
     					label: ""
     				},
     				{
-    					value: 50,
+    					value: 100-data.list[0].humidity,
     					color: "white",
     					highlight: "white",
     					label: ""
     				},
     			];
-           	    var optionsPressure = 
+                var optionsHumidity = 
                     {
-                        tooltipTemplate: "<%= value %>",
+                        tooltipTemplate: "<%= value %>%",
                         showTooltips: true,
                         onAnimationComplete: function()
                         {    
-                            this.showTooltip(this.datasets[0].points, true);          
+                            this.showTooltip(this.segments, true);          
+                        },
+                        tooltipEvents: []
+                    };
+                    
+        		var chartHumidity = document.getElementById('chart-humidity').getContext('2d');
+        	    new Chart(chartHumidity).Doughnut(humidityData, optionsHumidity, {
+        			responsive: true
+        		});
+        		
+        		var pressureData = {
+    				labels : ['Normal','Current'],
+            		datasets : [
+            			{
+            				fillColor : '#0A94C2',
+            				strokeColor : 'white',
+            				highlightFill: '#991C1F',
+            				highlightStroke: 'white',
+            				data : [760, Math.round(data.list[0].pressure*0.7501)] //convert from hPa to mm Hg
+            			},
+            		]
+    			};
+                var optionsPressure = 
+                    {
+                        showTooltips: true,
+                        onAnimationComplete: function()
+                        {    
+                            this.showTooltip(this.datasets[0], true);          
                         },
                         tooltipEvents: []
                     };
                     
         		var chartPressure = document.getElementById('chart-pressure').getContext('2d');
-        	    new Chart(chartPressure).Doughnut(doughnutData, optionsPressure, {
-        			responsive: true
-        		});
-        				
+        	    new Chart(chartPressure).Bar(pressureData, //optionsPressure, 
+        	                                {responsive: true
+        		});*/
+        		
             });
     }
     

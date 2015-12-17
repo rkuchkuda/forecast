@@ -536,18 +536,12 @@ body.open .wrapper, body.open #footer{
     display: block;
 }
 
-#main .forecast-box .chart-box .chart-box-item #chart-temp{
-    height: 240px;
-    width: 100%;
-}
-
+#main .forecast-box .chart-box .chart-box-item #chart-temp,
+#main .forecast-box .chart-box .chart-box-item #chart-humidity,
 #main .forecast-box .chart-box .chart-box-item #chart-pressure{
     height: 240px;
     width: 100%;
-    font-family: 'Neucha', cursive, Arial;
 }
-
-
 
 
 #main .forecast-box .forecast-box-right{

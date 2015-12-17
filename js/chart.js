@@ -166,7 +166,7 @@
 			tooltipXOffset: 10,
 
 			// String - Template string for single tooltips
-			tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>",
+			tooltipTemplate: "<%= value %>",
 
 			// String - Template string for single tooltips
 			multiTooltipTemplate: "<%= value %>",
@@ -2054,7 +2054,7 @@
 		barStrokeWidth : 2,
 
 		//Number - Spacing between each of the X value sets
-		barValueSpacing : 5,
+		barValueSpacing : 40,
 
 		//Number - Spacing between data sets within X values
 		barDatasetSpacing : 1,
