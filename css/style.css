@@ -406,6 +406,15 @@ body.open .wrapper, body.open #footer{
     overflow: hidden;
 }
 
+#main .forecast-box .geolocationerror{
+    width: 100%;
+    padding: 150px 15px;
+    font-size: 25px;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
 #main .forecast-box .forecast-box-left{
     position: relative;
     display:  inline-block;
@@ -481,7 +490,12 @@ body.open .wrapper, body.open #footer{
 #main .forecast-box .button-box{ 
     width: 100%;
     height: 60px;
-    margin-bottom: 39px
+    margin-bottom: 39px;
+    opacity: 0;
+}
+
+#main .forecast-box .button-box.visible{
+    opacity: 1;
 }
 
 #main .forecast-box .button-box ul{
@@ -544,14 +558,14 @@ body.open .wrapper, body.open #footer{
 }
 
 
-#main .forecast-box .forecast-box-right{
+#main .forecast-box #forecast-box-right{
     display: inline-block;
     width: 25.15%;
     font-size: 16px;
     vertical-align: top;
 }
 
-#main .forecast-box .forecast-box-right img{
+#main .forecast-box #forecast-box-right img{
     width: 100%;
 }
 

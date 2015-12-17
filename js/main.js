@@ -24,7 +24,9 @@ $(function() {
     navigator.geolocation.getCurrentPosition(getWeatherData, error);
    
     function error(err) {
-      $('.forecast-box-left').html('<p>Please allow to take your geolocation or search weather forecast by city</p>');
+      $('.forecast-box').html('<div class="geolocationerror">Please choose location for weather forecast</div>');
+      console.warn('ERROR(' + err.code + '): ' + err.message);
+        
     }
     
     function getWeatherData(position){
@@ -35,11 +37,44 @@ $(function() {
         		var localTime = new Date( data.list[0].dt*1000 - offset);
         		var currentDay = moment(localTime).calendar();
         		var currentDate = moment(localTime).format('MMMM D');
+        	    var currentPostcard;
+        	        switch (data.list[0].weather[0].icon) {
+                            case '01d'||'10n':
+                                currentPostcard = 'sun';
+                                break;
+                            case '02d'||'02n':
+                                currentPostcard = 'sun';
+                                break;
+                            case '03d'||'03n':
+                                currentPostcard = 'sun';
+                                break;
+                            case '04d'||'04n':
+                                currentPostcard = 'sun';
+                                break;
+                            case '09d'||'09n':
+                                currentPostcard = 'rain';
+                                break;
+                            case '10d'||'10n':
+                                currentPostcard = 'rain';
+                                break;
+                            case '11d'||'11n':
+                                currentPostcard = 'rain';
+                                break;
+                            case '13d'||'13n':
+                                currentPostcard = 'snow';
+                                break;
+                            case '50d'||'50n':
+                                currentPostcard = 'rain';
+                                break;
+                        };
+    	    
         	    $('#forecast-date').html('<div class="day-active">' + currentDay + '</div>' +
                                         '<div class="data-active">' + currentDate + '</div>');
                 $('#forecast-img').html('<img src="img/w/' + data.list[0].weather[0].icon + '.png" alt="weather icon" />' + 
                                         '<p>' + data.list[0].weather[0].description + '</p>');
                 $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
+                $('#forecast-box-right').html('<img src="img/postcard/postcard-img-' + currentPostcard + '.png"></img>');
+                $('.button-box').addClass('visible');
                 
                 // chart for temperature 
                
