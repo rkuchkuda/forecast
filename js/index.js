@@ -70,7 +70,7 @@ $(function() {
     	    
         	    $('#forecast-date').html('<div class="day-active">' + currentDay + '</div>' +
                                         '<div class="data-active">' + currentDate + '</div>');
-                $('#forecast-img').html('<img src="img/w/' + data.list[0].weather[0].icon + '.png" alt="weather icon" />' + 
+                $('#forecast-img').html('<img src="img/weather-img/' + data.list[0].weather[0].icon + '.png" alt="weather icon" />' + 
                                         '<p>' + data.list[0].weather[0].description + '</p>');
                 $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
                 $('#forecast-box-right').html('<img src="img/postcard/postcard-img-' + currentPostcard + '.png"></img>');
