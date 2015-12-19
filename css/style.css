@@ -49,6 +49,11 @@ body.open .wrapper, body.open #footer{
     margin: 0 auto;
 }
 
+.none-active {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
 /* sidebar */
 
 #aside {
@@ -153,7 +158,7 @@ body.open .wrapper, body.open #footer{
 
 #aside .sidebar-forecast-box .sidebar-forecast-close .side-data-sm{
     text-align: center;
-    color: #4D4D4D;
+    color: #BFBFBF;
     font-size: 24px;
 }
 
@@ -198,7 +203,7 @@ body.open .wrapper, body.open #footer{
     width: 100%;
     line-height: 40px;
     font-size: 25px;
-    color:  #C7C7C7;
+    color:  #BFBFBF;
     text-align: center;
     display: block;
     content: "";
@@ -547,11 +552,18 @@ body.open .wrapper, body.open #footer{
 }
 
 #main .forecast-box .chart-box .chart-box-item{
-    display: none;
+    overflow: hidden;
+    position: absolute;
+    z-index: -20;
+    height: 0;
+    opacity: 0;
 }
 
 #main .forecast-box .chart-box .chart-box-item.active{
-    display: block;
+    opacity: 1;
+    position: static;
+    z-index: 1;
+    height: auto;
 }
 
 #main .forecast-box .chart-box .chart-box-item #chart-temp,
