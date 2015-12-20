@@ -95,23 +95,32 @@ function blockSliderArrow(dayNum) {
 
 // Insert weather data
 function insertWeatherData(data){
+    moment.locale('en', {
+        calendar : {
+            lastDay : '[Yesterday]',
+            sameDay : '[Today]',
+            nextDay : '[Tomorrow]',
+            lastWeek : '[last] dddd [] ',
+            nextWeek : 'dddd [] ',
+            sameElse : 'L'
+        }
+    });
     var offset = (new Date()).getTimezoneOffset()*60*1000;
-    console.log(dayNum);
 	var localTime = new Date( data.list[dayNum].dt*1000 - offset);
 	var currentDay = moment(localTime).calendar();
 	var currentDate = moment(localTime).format('MMMM, D');
 	
 	var localTimeSecondDay = new Date( data.list[0+1].dt*1000 - offset);
 	var secondDay = moment(localTimeSecondDay).calendar();
-	var secondDateSmall = moment(localTimeSecondDay).format('D.M ');
+	var secondDateSmall = moment(localTimeSecondDay).format('MMM D');
 	
 	var localTimeThirdDay = new Date( data.list[0+2].dt*1000 - offset);
 	var thirdDay = moment(localTimeThirdDay).calendar();
-	var thirdDateSmall = moment(localTimeThirdDay).format('D.M ');
+	var thirdDateSmall = moment(localTimeThirdDay).format('MMM D');
 	
 	var localTimeFourthDay = new Date( data.list[0+3].dt*1000 - offset);
 	var fourthDay = moment(localTimeFourthDay).calendar();
-	var fourthDateSmall = moment(localTimeFourthDay).format('D.M ');
+	var fourthDateSmall = moment(localTimeFourthDay).format('MMM D');
 	
     
     var currentPostcard;

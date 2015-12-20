@@ -2,10 +2,11 @@ body{
     color: #4D4D4D;
     background-color: #EBEFF0;
     font-family: 'Neucha', cursive, Arial;
+    overflow-x: hidden;
 }
 
 body.open {
-    /*overflow-x: hidden; make bug for chart-box capture when body take class open */
+    overflow-x: hidden;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -52,6 +53,7 @@ body.open .wrapper, body.open #footer{
     cursor: default;
     pointer-events: none;
 }
+
 /* sidebar */
 
 #aside {
@@ -201,7 +203,6 @@ body.open .wrapper, body.open #footer{
     content: "";
     clear: both;
 }
-
 
 /* end sidebar */
 
@@ -386,9 +387,6 @@ body.open .wrapper, body.open #footer{
 #main .nav-button.arrow-down{
     
 }
-
-
-/* end nav */
 
 /* forecast box*/
 
