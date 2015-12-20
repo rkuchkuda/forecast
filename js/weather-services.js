@@ -3,9 +3,9 @@ function getWeatherData(fnOK, fnError){
         navigator.geolocation.getCurrentPosition(locSuccess, locError);
     } 
     function locSuccess(position) {
-        $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + position.coords.latitude + '&lon=' +position.coords.longitude + '&units=metric&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6', 
+        $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + position.coords.latitude + '&lon=' +position.coords.longitude + '&cnt=16&units=metric&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6', 
             function(data){
-        	    fnOK.call(this, data);
+                fnOK.call(this, data);
             });
     }
     

@@ -40,7 +40,7 @@
             <div class="container">
                 <div class="poll-left">
                     <a href="index.html" class="logo">
-                        <img src="img/logo.png">
+                        <img src="img/logo.png" alt="website logo">
                         <div class="logo-capt">
                             <p>POSTCARD</p>
                             <p>weather forecast</p>
@@ -63,23 +63,15 @@
             <div class="container">
                 <nav class="nav-button arrow-up">
                     <ul>
-                        <li class="arrow"><a class="previous" href="#" title="">Yesterday</a></li>
+                        <li class="arrow"><a class="previous none-active" href="#" title="">Yesterday</a></li>
                     </ul>
                 </nav>
 <!-- Forecast box -->
                 <div class="forecast-box clearfix">
                     <div class="forecast-box-left">
-                        <div id="forecast-date">
-                            <!-- <div class="day-active">Thursday</div>
-                            <div class="data-active">25 november</div> -->
-                        </div>    
-                        <div id="forecast-img">
-                            <!-- <img src="img/weather-img/04n.png" alt="weather icon" /> -->
-                            <!-- <p>Rain whith snow</p> -->
-                        </div>
-                        <div id="location-box">
-                            <!-- <p id="location">Lviv</p> -->
-                        </div>    
+                        <div id="forecast-date"></div>    
+                        <div id="forecast-img"></div>
+                        <div id="location-box"></div>    
                     </div>
                     <div class="forecast-box-middle">
                         <nav class="button-box">
@@ -90,8 +82,8 @@
                                 <li data-name="humidity">
                                     <a href="">Humidity</a>
                                     </li>
-                                <li data-name="pressure">
-                                    <a href="">Pressure</a>
+                                <li data-name="wind">
+                                    <a href="">Wind</a>
                                 </li>
                             </ul>
                         </nav>
@@ -100,16 +92,20 @@
                                 <canvas id="chart-temp"></canvas>
                             </div>
                             <div class="chart-box-item humidity">
-                                <canvas id="chart-humidity"></canvas>
+                                <div class="chart-humidity-canvas">
+                                    <canvas id="chart-humidity"></canvas>    
+                                </div>
+                                <div id="chart-humidity-num"></div>
                             </div>
-                            <div class="chart-box-item pressure">
-                                <canvas id="chart-pressure"></canvas>
+                            <div class="chart-box-item wind">
+                                <div class="chart-wind-canvas">
+                                    <img id="wind-image" src="img/wind-direction.png" alt="wind direction icon">
+                                </div>
+                                <div id="chart-wind-num"></div>
                             </div>
                         </div>
                     </div>
-                    <div id="forecast-box-right">
-                        <!--<img src="img/postcard/postcard-img-sun.png"></img>-->
-                    </div>
+                    <div id="forecast-box-right"></div>
                 </div>
 <!-- End forecast box -->
                 <nav class="nav-button arrow-down">
@@ -128,6 +124,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
     <script src="js/chart.js"></script>
     <script src="js/moment.js"></script>
+    <script src="js/rotate.js"></script>
     <script src="js/weather-services.js"></script> 
     <script src="js/index.js"></script> 
 </body>

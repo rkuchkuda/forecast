@@ -6,16 +6,15 @@ body{
 
 body.open {
     /*overflow-x: hidden; make bug for chart-box capture when body take class open */
-    transition: all 0.3s;
-    -o-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 body.open .wrapper, body.open #footer{
-    transform: translateX(115px);
     -ms-transform: translateX(115px);
     -webkit-transform: translateX(115px);
+    transform: translateX(115px);
 }
 
 .wrapper{
@@ -30,7 +29,6 @@ body.open .wrapper, body.open #footer{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     transition: transform 1.5s;
-    -o-transition: transform 1.5s;
     -moz-transition: transform 1.5s;
     -webkit-transition: transform 1.5s;
     transform: translateX(0px);
@@ -65,11 +63,9 @@ body.open .wrapper, body.open #footer{
     z-index: 5;
     -webkit-transform: translateX(-115px);
     -moz-transform: translateX(-115px);
-    -o-transform: translateX(-115px);
     transform: translateX(-115px);
     -webkit-transition: transform 1.5s;
     -moz-transition: transform 1.5s;
-    -o-transition: transform 1.5s;
     transition: transform 1.5s;
     transition-timing-function: ease;
 }
@@ -77,7 +73,6 @@ body.open .wrapper, body.open #footer{
 #aside:hover{
     -webkit-transform: translateX(0px);
     -moz-transform: translateX(0px);
-    -o-transform: translateX(0px);
     transform: translateX(0px);
 }
 
@@ -85,7 +80,6 @@ body.open .wrapper, body.open #footer{
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
 
@@ -101,15 +95,13 @@ body.open .wrapper, body.open #footer{
 #aside .sidebar-button img{
     width: 100%;
 }
-#aside .sidebar-button .button-right{
+#aside .sidebar-button .sidebar-arrow{
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
     transition: all 0.5s;
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
 }
 
@@ -566,13 +558,64 @@ body.open .wrapper, body.open #footer{
     height: auto;
 }
 
-#main .forecast-box .chart-box .chart-box-item #chart-temp,
-#main .forecast-box .chart-box .chart-box-item #chart-humidity,
-#main .forecast-box .chart-box .chart-box-item #chart-pressure{
+#main .forecast-box .chart-box .chart-box-item #chart-temp{
     height: 240px;
     width: 100%;
 }
 
+#main .forecast-box .chart-box .chart-box-item .chart-humidity-canvas,
+#main .forecast-box .chart-box .chart-box-item .chart-wind-canvas{
+    height: 240px;
+    width: 65%;
+    float: left;
+}
+
+#main .forecast-box .chart-box .chart-box-item #chart-humidity,
+#main .forecast-box .chart-box .chart-box-item #chart-wind{
+    height: 240px;
+    width: 100%;
+}
+
+#main .forecast-box .chart-box .chart-box-item #chart-humidity-num,
+#main .forecast-box .chart-box .chart-box-item #chart-wind-num{
+	height: 240px;
+	width: 35%;
+	float: right;
+	text-align: left;
+	font-size: 40px;
+}
+
+#main .forecast-box .chart-box .chart-box-item #chart-humidity-num .humidity-num,
+#main .forecast-box .chart-box .chart-box-item #chart-wind-num .wind-num{
+	display: inline-block;
+	line-height: 55px;
+	width: 85px;
+	margin: 95px 0px;
+	text-align: center;
+	color: white;
+	background-color: rgba(77,77,77,0.9);
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#main .forecast-box .chart-box .chart-box-item #chart-wind-num .wind-num{
+    width: 125px;
+}
+
+#main .forecast-box .chart-box .chart-box-item #chart-humidity-num .humidity-num-trgl,
+#main .forecast-box .chart-box .chart-box-item #chart-wind-num .wind-num-trgl{
+	display: inline-block;
+	width: 0; 
+	height: 0; 
+	position: relative;
+	top: 2px;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent; 
+	border-right:10px solid rgba(77,77,77,0.9); 
+	content: "";
+	
+}
 
 #main .forecast-box #forecast-box-right{
     display: inline-block;
@@ -600,7 +643,6 @@ body.open .wrapper, body.open #footer{
     box-sizing: border-box;
     padding-right: 10px;
     transition: transform 1.5s;
-    -o-transition: transform 1.5s;
     -moz-transition: transform 1.5s;
     -webkit-transition: transform 1.5s;
     position: relative;
