@@ -272,7 +272,7 @@ body.open .wrapper, body.open #footer{
     outline: none;
 }
 
-#header .poll-right .search-form input[name="q"]{
+#header .poll-right .search-form input[name="search-location"]{
     width: 100%;
     border: none;
     font-size: 20px;
@@ -287,7 +287,7 @@ body.open .wrapper, body.open #footer{
     border-radius: 5px;
 }
 
-#header .poll-right .search-form input[name="submit"]{
+#header .poll-right .search-form input[name="button"]{
     top: 2px;
     right: 5px;
     width: 45px;
@@ -300,7 +300,7 @@ body.open .wrapper, body.open #footer{
     background-position: -55px 0px;
 }
 
-#header .poll-right .search-form input[name="submit"]:hover{
+#header .poll-right .search-form input[name="button"]:hover{
     background-position: -2px 0px;
     cursor: pointer;
 }
