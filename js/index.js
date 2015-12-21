@@ -18,6 +18,16 @@ $( document ).ready(function() {
     }); 
     
     // all click and hover event
+    
+    // save postcard function
+    $("#btnSave").click(function() { 
+        html2canvas($(".forecast-box"), {
+            onrendered: function(canvas) {
+                var win = window.open();
+	            $(win.document.body).html(canvas);
+            }
+        });
+    });
      
     // buttons in chart-box. switch chart in box
     $('.button-box').on('click', 'a', function( event ) {
