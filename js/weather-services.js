@@ -5,7 +5,10 @@ function getWeatherData(fnOK, fnError){
     function locSuccess(position) {
         $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + position.coords.latitude + '&lon=' +position.coords.longitude + '&cnt=16&units=metric&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6', 
             function(data){
+                localStorage.setItem('dayNum', 0);
+                localStorage.setItem('WeatherArray', JSON.stringify(data));
                 fnOK.call(this, data);
+                $('body').removeClass('load');
             });
     }
     
@@ -35,7 +38,16 @@ function getWeatherByCity(fnOK, fnError, cityName) {
         'http://api.openweathermap.org/data/2.5/forecast/daily?q=' 
         + cityName + '&cnt=16&units=metric' + '&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6',
         function (data) {
+            localStorage.setItem('WeatherArray', JSON.stringify(data));
+            
+            // reset 
+            localStorage.setItem('dayNum', 0);
+            $('.arrow .previous').addClass('none-active')
+            $('.arrow .next').removeClass('none-active')
+            // end reset
+            
             fnOK.call(this, data);
         }
     );
 }
+
