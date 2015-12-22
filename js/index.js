@@ -15,7 +15,7 @@ $( document ).ready(function() {
             $('#btn').trigger('click');
             return false;
         }
-    }); 
+    });
     
     // all click and hover event
     
@@ -197,8 +197,7 @@ function insertWeatherData(){
     			        Math.round(data.list[dayNum].temp.night)],
     		}
     	]
-    
-    }
+    };
     var optionsTemp = 
     {
         tooltipTemplate: '<%= value %>°',

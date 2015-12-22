@@ -351,6 +351,10 @@ body.open #footer{
     color: white;
 }
 
+#header #btnSave:focus{
+    outline: 0;
+}
+
 /* end header */
 
 /* forecast content */
