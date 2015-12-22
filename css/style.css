@@ -28,27 +28,25 @@ body.open .wrapper, body.open #footer{
     transform: translateX(115px);
 }
 
-body.load:before {
+.forecast-box.load:before {
     position: absolute;
     width: 100%;
     content: "";
     height: 100%;
     z-index: 222;
-    background: rgba(255,255,255,0.7);
 }
-body.load:after {
-    width: 800px;
-    height: 600px;
+.forecast-box.load:after {
+    width: 200px;
+    height: 200px;
     left: 0;
     right: 0;
-    top: 0;
+    top: -90px;
     bottom: 0;
     margin: auto;
     position: absolute;
     z-index: 223;
     content: "";
-    border-radius: 50%;
-    background: url("../img/loading.gif") center no-repeat;
+    background: url("../img/loader.gif") center no-repeat;
 }
 
 .wrapper{
@@ -81,6 +79,7 @@ body.load:after {
 }
 
 .none-active {
+    font-size: 0px;
     opacity: 0.5;
     cursor: default;
     pointer-events: none;
@@ -120,7 +119,7 @@ body.load:after {
 #aside .sidebar-button{
     width: 27px;
     height: 36px;
-    margin: 60px 40px 75px 0px;
+    margin: 60px 40px 100px 0px;
     float: right;
     content: "";
     display: table;
@@ -184,7 +183,7 @@ body.load:after {
 
 #aside .sidebar-forecast-box .sidebar-forecast-close .side-data-sm{
     text-align: center;
-    color: #BFBFBF;
+    color: white;
     font-size: 24px;
 }
 
@@ -229,7 +228,7 @@ body.load:after {
     width: 100%;
     line-height: 40px;
     font-size: 25px;
-    color:  #BFBFBF;
+    color:  white;
     text-align: center;
     display: block;
     content: "";
@@ -332,7 +331,7 @@ body.load:after {
 
 #header #btnSave{
     width: 120px;
-    line-height: 50px;
+    line-height: 48px;
     float: right;
     font-family: 'Neucha', cursive, Arial;
     font-size: 16px;
@@ -374,6 +373,7 @@ body.load:after {
     height: 30px;
     height: inherit;
     margin: 0px auto;
+    position: relative;
     text-align: center;
     font-size: 18px;
     -webkit-touch-callout: none;
@@ -405,13 +405,17 @@ body.load:after {
     padding-top: 33px;
     display: block;
     text-decoration: none;
-    position: relative;
 }
 
 #main .arrow-down .arrow a{
     padding-top: 0;
     padding-bottom: 30px;
     display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 #main .arrow-down .arrow a:before{
@@ -644,7 +648,7 @@ body.load:after {
 }
 
 #main .forecast-box .chart-box .chart-box-item #chart-wind-num .wind-num{
-    width: 125px;
+    width: 135px;
 }
 
 #main .forecast-box .chart-box .chart-box-item #chart-humidity-num .humidity-num-trgl,
@@ -692,4 +696,8 @@ body.load:after {
     position: relative;
 }
 
+#footer .copyright a{
+    text-decoration: none;
+    color: #0A94C2;
+}
 /* end footer */

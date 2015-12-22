@@ -8,7 +8,7 @@ function getWeatherData(fnOK, fnError){
                 localStorage.setItem('dayNum', 0);
                 localStorage.setItem('WeatherArray', JSON.stringify(data));
                 fnOK.call(this, data);
-                $('body').removeClass('load');
+                $('.forecast-box').removeClass('load');
             });
     }
     
@@ -45,7 +45,7 @@ function getWeatherByCity(fnOK, fnError, cityName) {
             $('.arrow .previous').addClass('none-active')
             $('.arrow .next').removeClass('none-active')
             // end reset
-            
+            $('.forecast-box').removeClass('load');
             fnOK.call(this, data);
         }
     );

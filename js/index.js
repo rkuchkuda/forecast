@@ -7,7 +7,7 @@ $( document ).ready(function() {
     });
     
     getWeatherData(insertWeatherData, showError);
-    $('body').addClass('load');
+    $('.forecast-box').addClass('load');
     
      $('#search-loc').keypress(function(e) {
         var ENTER_KEY_CODE = 13;
@@ -52,21 +52,6 @@ $( document ).ready(function() {
         $('.forecast-box').html('<div class="geolocationerror">' + msg + '</div>');
 	}
     
-    
-    
-    //var currentGeolocation;
-    // function positionLatLon(position, currentGeolocation) {
-    //     currentGeolocation = position;
-    //     return currentGeolocation;
-      
-    // }
-    
-    //console.log(currentGeolocation);    
-     
-    
-
- 
- 
     // slider navigation
     $('.arrow').on('click', '.next', function(event){
         event.preventDefault();
@@ -91,8 +76,6 @@ $( document ).ready(function() {
 });
 // document ready end
 
-
-
 // block slider function
 function blockSliderArrow(dayNum) {
     if(dayNum === 0) {
@@ -104,9 +87,6 @@ function blockSliderArrow(dayNum) {
          $('.arrow .next').removeClass('none-active')
     }
 }
-
-
-
 
 // Insert weather data
 function insertWeatherData(){
@@ -122,8 +102,8 @@ function insertWeatherData(){
             lastDay : '[Yesterday]',
             sameDay : '[Today]',
             nextDay : '[Tomorrow]',
-            lastWeek : '[last] dddd [] ',
-            nextWeek : 'dddd [] ',
+            lastWeek : '[last] dddd',
+            nextWeek : 'dddd',
             sameElse : 'L'
         }
     });
@@ -131,6 +111,9 @@ function insertWeatherData(){
 	var localTime = new Date( data.list[dayNum].dt*1000 - offset);
 	var currentDay = moment(localTime).calendar();
 	var currentDate = moment(localTime).format('MMMM, D');
+	
+	var localTimeLastDay = new Date( data.list[Math.abs(dayNum-1)].dt*1000 - offset);
+	var lastDay = moment(localTimeLastDay).calendar();
 	
 	var localTimeSecondDay = new Date( data.list[dayNum+1].dt*1000 - offset);
 	var secondDay = moment(localTimeSecondDay).calendar();
@@ -199,14 +182,15 @@ function insertWeatherData(){
     $('.sidebar-forecast-close.third-day').html('<img src="img/weather-img/white/' + data.list[dayNum+2].weather[0].icon + '.png" alt="weather icon"> <div class="side-data-sm">' + thirdDateSmall + '</div>');
     $('.sidebar-forecast-open.forth-day').html('<div class="side-temp">' + Math.round(data.list[dayNum+3].temp.day) + '&deg</div> <div class="side-forecast-img"> <img src="img/weather-img/white/' + data.list[dayNum+3].weather[0].icon + '.png" alt="weather icon"> </div> <p class="side-day">' + fourthDay + '</p>');
     $('.sidebar-forecast-close.forth-day').html('<img src="img/weather-img/white/' + data.list[dayNum+3].weather[0].icon + '.png" alt="weather icon"> <div class="side-data-sm">' + fourthDateSmall + '</div>');
-    
+    $('.previous').html(lastDay);
+    $('.next').html(secondDay);
     // insert weather data in chart boxes
     var tempChartData = {
     	labels : ['Morning','Daytime','Evening','Night'],
     	datasets : [
     		{
     			label: 'Chart whith temperature',
-    			fillColor : 'white',
+    			fillColor : 'rgba(255,255,255,0)',
     			strokeColor : '#0A94C2',
     			pointColor : '#991C1F',
     			pointStrokeColor : 'white',
