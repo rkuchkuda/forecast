@@ -1,128 +1,128 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Postcard weather forecast</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="img/favicon.ico">
-  </head>
-<body class="home">
-<!-- Sidebar -->
-    <aside id="aside" class="clearfix">
-      <div class="sidebar-button">
-          <img class="sidebar-arrow" src="img/sidebar-arrow.png" alt="button on-off">
-      </div>
-      <div class="sidebar-forecast-box">
-              <div class="sidebar-forecast">
-                  <div class="sidebar-forecast-open second-day"></div>
-                  <div class="sidebar-forecast-close second-day"></div>
-              </div>
-              <div class="sidebar-forecast">
-                  <div class="sidebar-forecast-open third-day"></div>
-                  <div class="sidebar-forecast-close third-day"></div>
-              </div>
-              <div class="sidebar-forecast">
-                  <div class="sidebar-forecast-open forth-day"></div>
-                  <div class="sidebar-forecast-close forth-day"></div>
-              </div>
-          </div>
-    </aside>
-<!-- End sidebar -->
-    <div class="wrapper">
-<!-- Header -->
-        <header id="header">
-            <div class="container">
-                <div class="poll-left">
-                    <a href="index.html" class="logo">
-                        <img src="img/logo.png" alt="website logo">
-                        <div class="logo-capt">
-                            <p>POSTCARD</p>
-                            <p>weather forecast</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="poll-right">
-                    <form class="search-form">
-                        <input type="text" id="search-loc" name="search-location" value="" placeholder="search for location">
-                        <input type="button" id="btn" name="button" value="">
-                    </form>
-                </div>
-                <input type="button" id="btnSave" value="Save postcard"/>
+    <head>
+        <title>Postcard weather forecast</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="img/favicon.ico">
+    </head>
+    <body class="home">
+    <!-- Sidebar -->
+        <aside id="aside" class="clearfix">
+            <div class="sidebar-button">
+                <img class="sidebar-arrow" src="img/sidebar-arrow.png" alt="button on-off">
             </div>
-        </header>
-<!-- End header -->
-        <main id="main">
-            <div class="container">
-                <nav class="nav-button arrow-up">
-                    <ul>
-                        <li class="arrow"><a class="previous none-active" href="#" title=""></a></li>
-                    </ul>
-                </nav>
-<!-- Forecast box -->
-                <div class="forecast-box clearfix">
-                    <div class="forecast-box-left">
-                        <div id="forecast-date"></div>    
-                        <div id="forecast-img"></div>
-                        <div id="location-box"></div>    
+            <div class="sidebar-forecast-box">
+                <div class="sidebar-forecast">
+                    <div class="sidebar-forecast-open second-day"></div>
+                    <div class="sidebar-forecast-close second-day"></div>
+                </div>
+                <div class="sidebar-forecast">
+                    <div class="sidebar-forecast-open third-day"></div>
+                    <div class="sidebar-forecast-close third-day"></div>
+                </div>
+                <div class="sidebar-forecast">
+                    <div class="sidebar-forecast-open forth-day"></div>
+                    <div class="sidebar-forecast-close forth-day"></div>
+                </div>
+            </div>
+        </aside>
+    <!-- End sidebar -->
+        <div class="wrapper">
+    <!-- Header -->
+            <header id="header">
+                <div class="container">
+                    <div class="poll-left">
+                        <a href="index.html" class="logo">
+                            <img src="img/logo.png" alt="website logo">
+                            <div class="logo-capt">
+                                <p>POSTCARD</p>
+                                <p>weather forecast</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="forecast-box-middle">
-                        <nav class="button-box">
-                            <ul>
-                                <li class="active" data-name="temperature">
-                                    <a href="">Temperature</a>
-                                </li>
-                                <li data-name="humidity">
-                                    <a href="">Humidity</a>
+                    <div class="poll-right">
+                        <form class="search-form">
+                            <input type="text" id="search-loc" name="search-location" value="" placeholder="search for location">
+                            <input type="button" id="btn" name="button" value="">
+                        </form>
+                    </div>
+                    <input type="button" id="btnSave" value="Save postcard"/>
+                </div>
+            </header>
+    <!-- End header -->
+            <main id="main">
+                <div class="container">
+                    <nav class="nav-button arrow-up">
+                        <ul>
+                            <li class="arrow"><a class="previous none-active" href="#" title=""></a></li>
+                        </ul>
+                    </nav>
+    <!-- Forecast box -->
+                    <div class="forecast-box clearfix">
+                        <div class="forecast-box-left">
+                            <div id="forecast-date"></div>    
+                            <div id="forecast-img"></div>
+                            <div id="location-box"></div>    
+                        </div>
+                        <div class="forecast-box-middle">
+                            <nav class="button-box">
+                                <ul>
+                                    <li class="active" data-name="temperature">
+                                        <a href="">Temperature</a>
                                     </li>
-                                <li data-name="wind">
-                                    <a href="">Wind</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="chart-box">
-                            <div class="chart-box-item temperature active">
-                                <canvas id="chart-temp"></canvas>
-                            </div>
-                            <div class="chart-box-item humidity">
-                                <div class="chart-humidity-canvas">
-                                    <canvas id="chart-humidity"></canvas>    
+                                    <li data-name="humidity">
+                                        <a href="">Humidity</a>
+                                    </li>
+                                    <li data-name="wind">
+                                        <a href="">Wind</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="chart-box">
+                                <div class="chart-box-item temperature active">
+                                    <canvas id="chart-temp"></canvas>
                                 </div>
-                                <div id="chart-humidity-num"></div>
-                            </div>
-                            <div class="chart-box-item wind">
-                                <div class="chart-wind-canvas">
-                                    <img id="wind-image" src="img/wind-direction.png" alt="wind direction icon">
+                                <div class="chart-box-item humidity">
+                                    <div class="chart-humidity-canvas">
+                                        <canvas id="chart-humidity"></canvas>    
+                                    </div>
+                                    <div id="chart-humidity-num"></div>
                                 </div>
-                                <div id="chart-wind-num"></div>
+                                <div class="chart-box-item wind">
+                                    <div class="chart-wind-canvas">
+                                        <img id="wind-image" src="img/wind-direction.png" alt="wind direction icon">
+                                    </div>
+                                    <div id="chart-wind-num"></div>
+                                </div>
                             </div>
                         </div>
+                        <div id="forecast-box-right"></div>
                     </div>
-                    <div id="forecast-box-right"></div>
+    <!-- End forecast box -->
+                    <nav class="nav-button arrow-down">
+                        <ul>
+                            <li class="arrow"><a class="next" href="#"></a></li>
+                        </ul>
+                    </nav>
                 </div>
-<!-- End forecast box -->
-                <nav class="nav-button arrow-down">
-                    <ul>
-                        <li class="arrow"><a class="next" href="#"></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </main>
-    </div>
-    <footer id="footer" class="clearfix">
-      <div class="container">
-        <div class="copyright">Created by <a href="https://www.facebook.com/roman.kuchkuda" target="_blank">Roman Kuchkuda</a>, 2015</div>
-      </div>
-    </footer>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
-    <script src="js/chart.js"></script>
-    <script src="js/moment.js"></script>
-    <script src="js/rotate.js"></script>
-    <script src="js/html2canvas.js"></script>
-    <script src="js/weather-services.js"></script> 
-    <script src="js/index.js"></script> 
-</body>
+            </main>
+        </div>
+        <footer id="footer" class="clearfix">
+          <div class="container">
+            <div class="copyright">Created by <a href="https://www.facebook.com/roman.kuchkuda" target="_blank">Roman Kuchkuda</a>, 2015</div>
+          </div>
+        </footer>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+        <script src="js/chart.js"></script>
+        <script src="js/moment.js"></script>
+        <script src="js/rotate.js"></script>
+        <script src="js/html2canvas.js"></script>
+        <script src="js/weather-services.js"></script> 
+        <script src="js/index.js"></script> 
+    </body>
 </html>

@@ -5,14 +5,14 @@ html {
 }
 
 body{
-    color: #4D4D4D;
-    background-color: #EBEFF0;
-    font-family: 'Neucha', cursive, Arial;
-    overflow-x: hidden;
     width: 100%;
     margin: 0;
     padding: 0;
     position: relative;
+    font-family: 'Neucha', cursive, Arial;
+    color: #4D4D4D;
+    background-color: #EBEFF0;
+    overflow-x: hidden;
 }
 
 body.open {
@@ -22,7 +22,8 @@ body.open {
     transition: all 0.3s;
 }
 
-body.open .wrapper, body.open #footer{
+body.open .wrapper,
+body.open #footer{
     -ms-transform: translateX(115px);
     -webkit-transform: translateX(115px);
     transform: translateX(115px);
@@ -31,19 +32,19 @@ body.open .wrapper, body.open #footer{
 .forecast-box.load:before {
     position: absolute;
     width: 100%;
-    content: "";
     height: 100%;
+    content: "";
     z-index: 222;
 }
 .forecast-box.load:after {
     width: 200px;
     height: 200px;
+    margin: auto;
+    position: absolute;
     left: 0;
     right: 0;
     top: -90px;
     bottom: 0;
-    margin: auto;
-    position: absolute;
     z-index: 223;
     content: "";
     background: url("../img/loader.gif") center no-repeat;
@@ -59,18 +60,18 @@ body.open .wrapper, body.open #footer{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    transition: transform 1.5s;
     -moz-transition: transform 1.5s;
     -webkit-transition: transform 1.5s;
-    transform: translateX(0px);
+    transition: transform 1.5s;
     -ms-transform: translateX(0px);
     -webkit-transform: translateX(0px);
+    transform: translateX(0px);
 }
 
 .wrapper.open{
-    transform: translateX(115px);
     -ms-transform: translateX(115px);
     -webkit-transform: translateX(115px);
+    transform: translateX(115px);
 }
 
 .container {
@@ -91,8 +92,8 @@ body.open .wrapper, body.open #footer{
     height: 100%;
     width: 230px;
     max-width: 25%;
-    background-color: #0A94C2;
     position: fixed;
+    background-color: #0A94C2;
     z-index: 5;
     -webkit-transform: translateX(-115px);
     -moz-transform: translateX(-115px);
@@ -117,12 +118,12 @@ body.open .wrapper, body.open #footer{
 }
 
 #aside .sidebar-button{
+    display: table;
     width: 27px;
     height: 36px;
     margin: 60px 40px 100px 0px;
     float: right;
     content: "";
-    display: table;
 }
 
 #aside .sidebar-button img{
@@ -192,12 +193,12 @@ body.open .wrapper, body.open #footer{
     height: 115px;
     margin: 0 auto;
     margin-bottom: 40px;
+    display: none; 
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     content: "";
     clear: both;
-    display: none; 
 }
 
 #aside:hover .sidebar-forecast-box .sidebar-forecast .sidebar-forecast-open{
@@ -228,9 +229,9 @@ body.open .wrapper, body.open #footer{
     width: 100%;
     line-height: 40px;
     font-size: 25px;
+    display: block;
     color:  white;
     text-align: center;
-    display: block;
     content: "";
     clear: both;
 }
@@ -273,8 +274,8 @@ body.open .wrapper, body.open #footer{
 #header .poll-left .logo .logo-capt{
     height: 50px;
     display: inline-block;
-    vertical-align: bottom;
     padding-bottom: 10px;
+    vertical-align: bottom;
 }
 
 #header .poll-left .logo .logo-capt p{
@@ -298,10 +299,10 @@ body.open .wrapper, body.open #footer{
 
 #header .poll-right .search-form input[name="search-location"]{
     width: 100%;
-    border: none;
-    font-size: 20px;
     height: 50px;
+    border: none;
     font-family: "Neucha", cursive, Arial;
+    font-size: 20px;
     padding: 15px 60px 9px 15px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -312,12 +313,12 @@ body.open .wrapper, body.open #footer{
 }
 
 #header .poll-right .search-form input[name="button"]{
-    top: 2px;
-    right: 5px;
     width: 45px;
     height: 45px;
-    border: none;
     position: absolute;
+    top: 2px;
+    right: 5px;
+    border: none;
     background-color: transparent;
     background-image: url('../img/search-ico.png');
     background-repeat: no-repeat;
@@ -332,12 +333,12 @@ body.open .wrapper, body.open #footer{
 #header #btnSave{
     width: 120px;
     line-height: 48px;
+    margin: 37px 20px 0 0;
     float: right;
     font-family: 'Neucha', cursive, Arial;
     font-size: 16px;
     text-align: center;
     color: #0A94C2;
-    margin: 37px 20px 0 0;
     background-color: white;
     border: none;
     -webkit-border-radius: 5px;
@@ -362,7 +363,7 @@ body.open .wrapper, body.open #footer{
 #main .nav-button{
     width: 100%;
     height: 50px;
-        margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 #main .nav-button ul{
     height: inherit;
@@ -370,7 +371,6 @@ body.open .wrapper, body.open #footer{
 
 #main .nav-button .arrow{
     width: 100%;
-    height: 30px;
     height: inherit;
     margin: 0px auto;
     position: relative;
@@ -384,16 +384,16 @@ body.open .wrapper, body.open #footer{
     user-select: none;
 }
 #main .nav-button .arrow a:before{
-    background: url('../img/arrow.png') center top  no-repeat;
-    background-size: 200px 70px;
-    content: "";
+    height: 30px;
+    width: 200px;
+    margin: 0 auto;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 0 auto;
-    height: 30px;
-    width: 200px;
     left: 0;
+    background: url('../img/arrow.png') center top  no-repeat;
+    background-size: 200px 70px;
+    content: "";
 }
 
 #main .nav-button .arrow:hover a:before{
@@ -429,10 +429,6 @@ body.open .wrapper, body.open #footer{
 
 }
 
-#main .nav-button.arrow-down{
-    
-}
-
 /* forecast box*/
 
 #main .forecast-box{
@@ -455,18 +451,19 @@ body.open .wrapper, body.open #footer{
     padding: 150px 15px;
     font-size: 25px;
     text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    
 }
 
 #main .forecast-box .forecast-box-left{
-    position: relative;
-    display:  inline-block;
     width: 25.15%;
     max-height: 343px;
+    position: relative;
+    display:  inline-block;
     font-size: 18px;
     vertical-align: top;  
-    white-space: nowrap; /*pay attention*/
+    white-space: nowrap;
 }
 
 #main .forecast-box .forecast-box-left a.arrow{
@@ -474,12 +471,12 @@ body.open .wrapper, body.open #footer{
 }
 
 #main .forecast-box .forecast-box-left #scroller{
+	width: 100%;
     display: block;
     position: absolute;
-	list-style: none;
-	width: 100%;
 	top: 0;
 	left: 0;
+	list-style: none;
 }
 
 #main .forecast-box #forecast-date{
@@ -521,13 +518,15 @@ body.open .wrapper, body.open #footer{
 }
 
 #main .forecast-box .forecast-box-middle{
-    display: inline-block;
-    position: relative;
     width: 49.7%;
     min-width: 24.41%;
     padding: 0 20px;
+    display: inline-block;
+    position: relative;
     font-size: 16px;
     vertical-align: top;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -547,21 +546,21 @@ body.open .wrapper, body.open #footer{
 }
 
 #main .forecast-box .button-box ul li{
-    display: inline-block;
     width: 100px;
     line-height: 30px;
-    text-align: center;
     margin-right: 15px;
+    display: inline-block;
+    text-align: center;
+    border: 2px solid gray;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    border: 2px solid gray;
 }
 
 #main .forecast-box .button-box ul li a{
-    text-decoration: none;
-    color: inherit;
     display: block;
+    color: inherit;
+    text-decoration: none;
 }
 
 #main .forecast-box .button-box ul li.active{
@@ -581,29 +580,29 @@ body.open .wrapper, body.open #footer{
 }
 
 #main .forecast-box .chart-box{
-    display: block;
     width: 100%;
-    position: relative;
     height: 100%;
+    display: block;
+    position: relative;
 }
 
 #main .forecast-box .chart-box .chart-box-item{
-    overflow: hidden;
+    height: 0;
+    margin: auto;
     position: absolute;
     left: 0;
     right: 0;
-    margin: auto;
     top: 0;
-    z-index: -20;
-    height: 0;
     opacity: 0;
+    overflow: hidden;
+    z-index: -20;
 }
 
 #main .forecast-box .chart-box .chart-box-item.active{
-    opacity: 1;
+    height: auto;
     position: static;
     z-index: 1;
-    height: auto;
+    opacity: 1;
 }
 
 #main .forecast-box .chart-box .chart-box-item #chart-temp{
@@ -635,9 +634,9 @@ body.open .wrapper, body.open #footer{
 
 #main .forecast-box .chart-box .chart-box-item #chart-humidity-num .humidity-num,
 #main .forecast-box .chart-box .chart-box-item #chart-wind-num .wind-num{
-	display: inline-block;
 	line-height: 55px;
 	width: 85px;
+	display: inline-block;
 	margin: 95px 0px;
 	text-align: center;
 	color: white;
@@ -653,14 +652,14 @@ body.open .wrapper, body.open #footer{
 
 #main .forecast-box .chart-box .chart-box-item #chart-humidity-num .humidity-num-trgl,
 #main .forecast-box .chart-box .chart-box-item #chart-wind-num .wind-num-trgl{
-	display: inline-block;
 	width: 0; 
 	height: 0; 
+	display: inline-block;
 	position: relative;
 	top: 2px;
 	border-top: 15px solid transparent;
 	border-bottom: 15px solid transparent; 
-	border-right:10px solid rgba(77,77,77,0.9); 
+	border-right: 10px solid rgba(77,77,77,0.9); 
 	content: "";
 	
 }
@@ -686,14 +685,14 @@ body.open .wrapper, body.open #footer{
     margin: -50px 0 0;
     height: 50px;
     padding-left: 150px;
+    padding-right: 10px;
+    position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding-right: 10px;
-    transition: transform 1.5s;
     -moz-transition: transform 1.5s;
     -webkit-transition: transform 1.5s;
-    position: relative;
+    transition: transform 1.5s;
 }
 
 #footer .copyright a{
