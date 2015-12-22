@@ -11,7 +11,6 @@ function getWeatherData(fnOK, fnError){
                 $('.forecast-box').removeClass('load');
             });
     }
-    
     function locError(error) {
         var message = 'Location error. ';
         switch(error.code) {
@@ -39,7 +38,6 @@ function getWeatherByCity(fnOK, fnError, cityName) {
         + cityName + '&cnt=16&units=metric' + '&lang=en&callback=?&appid=2239135b18e8b5e093a144e55b94b5d6',
         function (data) {
             localStorage.setItem('WeatherArray', JSON.stringify(data));
-            
             // reset 
             localStorage.setItem('dayNum', 0);
             $('.arrow .previous').addClass('none-active')

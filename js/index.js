@@ -1,4 +1,3 @@
-
 $( document ).ready(function() {
     console.log( "ready!" );
     var dayNum = 0;
@@ -70,9 +69,6 @@ $( document ).ready(function() {
         localStorage.setItem('dayNum', dayNum);
         insertWeatherData();
     });
-
-    
-    
 });
 // document ready end
 
@@ -127,7 +123,6 @@ function insertWeatherData(){
 	var fourthDay = moment(localTimeFourthDay).calendar();
 	var fourthDateSmall = moment(localTimeFourthDay).format('MMM D');
 	
-    
     var currentPostcard;
         switch (data.list[dayNum].weather[0].icon) {
                 case '01d':
@@ -245,5 +240,4 @@ function insertWeatherData(){
 	$('#chart-humidity-num').html('<div class="humidity-num-trgl"></div><div class="humidity-num">' + data.list[dayNum].humidity + '%' + '</div>');
 	$('#chart-wind-num').html('<div class="wind-num-trgl"></div><div class="wind-num">' + data.list[dayNum].speed + 'm/s' + '</div>');
 	$("#wind-image").rotate({animateTo:data.list[dayNum].deg});
-
 }
