@@ -48,7 +48,8 @@ $( document ).ready(function() {
     });
     
     function showError(msg){
-        $('.forecast-box').html('<div class="geolocationerror">' + msg + '</div>');
+        /*$('.forecast-box').html('<div class="geolocationerror">' + msg + '</div>');*/
+        alert(msg);
 	}
     
     // slider navigation
