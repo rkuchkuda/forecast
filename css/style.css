@@ -50,6 +50,8 @@ body.open #footer{
     background: url("../img/loader.gif") center no-repeat;
 }
 
+
+
 .wrapper{
     position: relative;
     width: 100%;
@@ -400,7 +402,7 @@ body.open #footer{
     content: "";
 }
 
-#main .nav-button .arrow:hover a:before{
+#main .nav-button .arrow:hover a:not(.none-active):before{
     background-position: center 2px;
 }
 
@@ -428,7 +430,7 @@ body.open #footer{
     bottom: 0;
 }
 
-#main .arrow-down .arrow:hover a:before{
+#main .arrow-down .arrow:hover a:not(.none-active):before{
     background-position: 0px -41px;
 
 }
