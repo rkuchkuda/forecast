@@ -13,18 +13,19 @@ function getWeatherData(fnOK, fnError){
     }
     function locError(error) {
         var message = 'Location error. ';
+        $('.forecast-box').removeClass('load');
         switch(error.code) {
             case error.TIMEOUT:
-                message += 'A timeout occured! Please try again!';
+                message += 'A timeout occured! Please try again! You can also use search input to get weather forecast';
                 break;
             case error.POSITION_UNAVAILABLE:
-                message += 'We can\'t detect your location. Sorry!';
+                message += 'We can\'t detect your location. Sorry! You can also use search input to get weather forecast';
                 break;
             case error.PERMISSION_DENIED:
-                message += 'Please allow geolocation access for this to work.';
+                message += 'Please allow geolocation access for this to work. You can also use search input to get weather forecast';
                 break;
             case error.UNKNOWN_ERROR:
-                message += 'An unknown error occured!';
+                message += 'An unknown error occured! You can also use search input to get weather forecast';
                 break;
         }
         fnError.call(this, message);
