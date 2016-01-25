@@ -170,7 +170,7 @@ function insertWeatherData(){
     $('#forecast-img').html('<img src="img/weather-img/' + data.list[dayNum].weather[0].icon + '.png" alt="weather icon" />' + 
                             '<p>' + data.list[dayNum].weather[0].description + '</p>');
     $('#location-box').html('<p id="location">' + data.city.name + ', ' + data.city.country + '</p>');
-    $('#forecast-box-right').html('<img src="img/postcard/postcard-img-' + currentPostcard + '.png" alt="weather postcard image"></img>');
+    $('.forecast-box-right').html('<img src="img/postcard/postcard-img-' + currentPostcard + '.png" alt="weather postcard image"></img>');
     //insert weather data in sidebar
     $('.sidebar-forecast-open.second-day').html('<div class="side-temp">' + Math.round(data.list[dayNum+1].temp.day) + '&deg</div> <div class="side-forecast-img"> <img src="img/weather-img/white/' + data.list[dayNum+1].weather[0].icon + '.png" alt="weather icon"> </div> <p class="side-day">' + secondDay + '</p>');
     $('.sidebar-forecast-close.second-day').html('<img src="img/weather-img/white/' + data.list[0+1].weather[0].icon + '.png" alt="weather icon"> <div class="side-data-sm">' + secondDateSmall + '</div>');
@@ -237,7 +237,7 @@ function insertWeatherData(){
     new Chart(chartHumidity).Doughnut(humidityData, optionsHumidity, {
 		responsive: true
 	});
-	$('#chart-humidity-num').html('<div class="humidity-num-trgl"></div><div class="humidity-num">' + data.list[dayNum].humidity + '%' + '</div>');
-	$('#chart-wind-num').html('<div class="wind-num-trgl"></div><div class="wind-num">' + data.list[dayNum].speed + 'm/s' + '</div>');
+	$('#chart-humidity-num').html('<div class="num-trgl"></div><div class="num-box-humidity">' + data.list[dayNum].humidity + '%' + '</div>');
+	$('#chart-wind-num').html('<div class="num-trgl"></div><div class="num-box-wind">' + data.list[dayNum].speed + 'm/s' + '</div>');
 	$("#wind-image").rotate({animateTo:data.list[dayNum].deg});
 }

@@ -8,6 +8,9 @@
         <link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/media.css">
+        <!--LESS-->
+        <link rel="stylesheet/less" href="less/style.less" type="text/css">
         <link rel="shortcut icon" href="img/favicon.ico">
     </head>
     <body class="home">
@@ -88,20 +91,20 @@
                                     <canvas id="chart-temp"></canvas>
                                 </div>
                                 <div class="chart-box-item humidity">
-                                    <div class="chart-humidity-canvas">
+                                    <div class="chart-canvas">
                                         <canvas id="chart-humidity"></canvas>    
                                     </div>
-                                    <div id="chart-humidity-num"></div>
+                                    <div class="chart-num" id="chart-humidity-num"></div>
                                 </div>
                                 <div class="chart-box-item wind">
-                                    <div class="chart-wind-canvas">
+                                    <div class="chart-canvas">
                                         <img id="wind-image" src="img/wind-direction.png" alt="wind direction icon">
                                     </div>
-                                    <div id="chart-wind-num"></div>
+                                    <div class="chart-num" id="chart-wind-num"></div>
                                 </div>
                             </div>
                         </div>
-                        <div id="forecast-box-right"></div>
+                        <div class="forecast-box-right"></div>
                     </div>
     <!-- End forecast box -->
                     <nav class="nav-button arrow-down">
@@ -118,6 +121,7 @@
           </div>
         </footer>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script> 
         <script src="js/chart.js"></script>
         <script src="js/moment.js"></script>
         <script src="js/rotate.js"></script>

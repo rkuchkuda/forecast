@@ -1,0 +1,197 @@
+@import "base/mixins.less";
+@import "base/variables.less";
+@import "base/reset.less";
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    color: @gray;
+    overflow-x: hidden;
+    position: relative;
+    font-family: @global-font;
+    background-color: @bg-color;
+    &.open {
+        overflow-x: hidden;
+        .transition(all 0.3s);
+        .wrapper, #footer{
+            .translateX(115px);
+        }
+    }
+}
+
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    .translateX(0px);
+    min-height: 100%;
+    position: relative;
+    padding: 0 10px 0 150px;
+    .box-sizing(border-box);
+    .transition(transform 1.5s);
+    &.open{
+        .translateX(115px);
+    }
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1024px;
+}
+
+.none-active {
+    opacity: 0.5;
+    font-size: 0px;
+    cursor: default;
+    pointer-events: none;
+}
+
+.poll-left {
+    float: left;
+}
+
+.poll-right {
+    float: right;
+}
+
+input:focus {
+    outline: none;
+}
+
+.forecast-box{
+    &.load{
+        &:before{
+            width: 100%;
+            content: "";
+            z-index: 222;
+            height: 100%;
+            position: absolute;
+        }
+        &:after{
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: -90px;
+            content: "";
+            z-index: 223;
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            background: url("../img/loader.gif") center no-repeat;
+        }
+    }
+}
+
+/* sidebar */
+@import "sidebar.less";
+
+#header{
+    padding: 20px 0;
+    min-height: 155px;
+    .box-sizing(border-box);
+    a{
+        color: @gray;
+        text-decoration: none;
+        &:visited{
+            color: @gray;
+        }
+    }
+    #btnSave{
+        border: none;
+        width: 120px;
+        float: right;
+        color: @default-color;
+        font-size: 16px;
+        line-height: 48px;
+        text-align: center;
+        .border-radius(5px);
+        margin: 37px 20px 0 0;
+        background-color: @white;
+        font-family: @global-font;
+        &:hover{
+            color: @white;
+            background-color: @default-color;
+        }
+        &:focus{
+            outline: 0;
+        }
+    }
+    .logo{
+        img{
+            height: 100px;
+            margin-right: 30px;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        .logo-capt{
+            height: 50px;
+            padding-bottom: 10px;
+            display: inline-block;
+            vertical-align: bottom;
+            p{
+                font-size: 26px;
+            }
+        }
+    }
+    .search-form{
+        width: 300px;
+        margin-top: 37px;
+        position: relative;
+        background-color: transparent;
+        #search-loc{
+            width: 100%;
+            height: 50px;
+            border: none;
+            color: @gray;
+            .placeholder-color(lighten(@gray, 30%));
+            font-size: 20px;
+            .border-radius(5px);
+            text-overflow: ellipsis;
+            .box-sizing(border-box);
+            font-family: @global-font;
+            padding: 12px 60px 9px 18px;
+        }    
+        #btn{
+            top: 2px;
+            right: 5px;
+            width: 45px;
+            height: 45px;
+            border: none;
+            position: absolute;
+            background: transparent url('../img/search-ico.png') -55px 0px no-repeat;
+            &:hover{
+                cursor: pointer;
+                background-position: -2px 0px;
+            }
+        }
+    }
+    
+}
+
+@import "main.less";
+
+#footer{
+    height: 50px;
+    margin: -50px 0 0;
+    position: relative;
+    padding-left: 150px;
+    padding-right: 10px;
+    .box-sizing(border-box);
+    .transition(transform 1.5s);
+    .copyright{
+        a{
+            text-decoration: none;
+            color: @default-color;
+        }
+    }
+}
+
+
+@import "media.less";

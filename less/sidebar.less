@@ -1,0 +1,113 @@
+#aside{
+    z-index: 5;
+    height: 100%;
+    width: 230px;
+    max-width: 25%;
+    position: fixed;
+    .translateX(-115px);
+    background-color: @default-color;
+    .transition(transform 1.5s);
+    transition-timing-function: ease;
+    &:hover{
+        .translateX(0px);
+        .sidebar-button .sidebar-arrow{
+            .rotate(180deg);
+        }
+        .sidebar-forecast-box{
+            .sidebar-forecast{
+                float: none;
+                width: 150px;
+                height: 115px;
+                margin: 0 auto;
+                margin-bottom: 40px;
+                .sidebar-forecast-close{
+                    display: none; 
+                }
+                .sidebar-forecast-open{
+                    display: block;
+                }
+            }
+        } 
+    }
+    .sidebar-forecast-box{
+        width: 100%;
+        clear: both;
+        content: "";
+        height: 465px;
+        .sidebar-forecast{
+            width: 75px;
+            content: "";
+            clear: both;
+            float: right;
+            height: 115px;
+            margin-bottom: 40px;
+            margin-right: 15px;
+            .sidebar-forecast-open{
+                content: "";
+                clear: both;
+                display: none; 
+                height: 115px;
+                margin: 0 auto;
+                max-width: 150px;
+                margin-bottom: 40px;
+                .box-sizing(border-box);
+                .side-temp{
+                    width: 75px;
+                    float: left;
+                    color: @white;
+                    font-size: 32px;
+                    line-height: 75px;
+                    text-align: center;
+                }
+                .side-forecast-img{
+                    float: left;
+                    width: 75px;
+                    height: 75px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .side-day{
+                    content: "";
+                    clear: both;
+                    width: 100%;
+                    color:  @white;
+                    display: block;
+                    font-size: 25px;
+                    line-height: 40px;
+                    text-align: center;
+                }
+            }
+            .sidebar-forecast-close{
+                width: 100%;
+                height: 100%;
+                display: block;
+                img{
+                    width: 75px;
+                    height: 75px;
+                    margin-bottom: 6px;
+                }
+                .side-data-sm{
+                    color: @white;
+                    font-size: 24px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .sidebar-button{
+        display: table;
+        content: "";
+        width: 27px;
+        height: 36px;
+        float: right;
+        margin: 60px 40px 100px 0px;
+        img{
+             width: 100%;
+        }
+        .sidebar-arrow{
+            .rotate(0deg);
+            .transition(all 0.5s);
+        }
+    }
+}

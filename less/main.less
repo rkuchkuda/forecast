@@ -1,0 +1,250 @@
+#main{
+    position: relative;
+    padding-bottom: 50px;
+    .nav-button{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        ul{
+            height: inherit;
+            .arrow{
+                width: 100%;
+                height: inherit;
+                font-size: 18px;
+                margin: 0px auto;
+                .user-select(none);
+                position: relative;
+                text-align: center;
+                &:hover a:not(.none-active):before{
+                    background-position: center 2px;
+                }
+                a{
+                    color: @gray;
+                    display: block;
+                    padding-top: 33px;
+                    text-decoration: none;
+                    &:before{
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        content: "";
+                        height: 30px;
+                        width: 200px;
+                        margin: 0 auto;
+                        position: absolute;
+                        background: url('../img/arrow.png') center top  no-repeat;
+                        background-size: 200px 70px;
+                    }
+                }
+            }
+        }
+        &.arrow-down{
+            ul{
+                .arrow{
+                    &:hover a:not(.none-active):before{
+                        background-position: 0px -41px;
+                    }
+                    a{
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        padding-top: 0;
+                        display: block;
+                        position: absolute;
+                        padding-bottom: 30px;
+                        &:before{
+                            bottom: 0;
+                            top: initial;
+                            background-position: 0px -40px;
+                        }
+                    }
+                }
+            } 
+        } 
+    }
+    .forecast-box{
+        width: 100%;
+        padding: 15px;
+        font-size: 0px;
+        overflow: hidden;
+        min-height: 370px;
+        text-align: center;
+        margin-bottom: 20px;
+        .box-sizing(border-box);
+        box-shadow: 0px 0px 3px #D1D1D1;
+        background-image: url('../img/postcard/postcard-background.png');
+        .forecast-box-left{
+            width: 25.15%;
+            font-size: 18px;
+            max-height: 343px;
+            position: relative;
+            white-space: nowrap;
+            vertical-align: top;  
+            display:  inline-block;
+            #forecast-date{
+                width: 100%;
+                height: 60px;
+                text-align: center;
+                .day-active, .data-active{
+                    font-size: 24px;
+                    line-height: 30px;
+                }
+            }
+            #forecast-img{
+                width: 100%;
+                overflow: hidden;
+                padding: 26px 50px;
+                text-align: center;
+                .box-sizing(border-box);
+                img{
+                    width: 100%;
+                }
+                p{
+                    line-height: 30px;
+                    text-align: center;
+                }
+            }
+            #location-box{
+                width: 100%;
+                font-size: 24px;
+                margin-bottom: 50px;
+            }
+        }
+        .forecast-box-middle{
+            width: 49.7%;
+            font-size: 16px;
+            padding: 0 20px;
+            min-width: 24.41%;
+            position: relative;
+            vertical-align: top;
+            display: inline-block;
+            .box-sizing(border-box);
+            .button-box{
+                opacity: 0;
+                width: 100%;
+                height: 60px;
+                margin-bottom: 39px;
+                &.visible{
+                    opacity: 1;
+                }
+                ul{
+                    padding: 13px 0;
+                    li{
+                        width: 100px;
+                        line-height: 30px;
+                        text-align: center;
+                        margin-right: 15px;
+                        .border-radius(5px);
+                        display: inline-block;
+                        border: 2px solid lighten(@gray, 30%);
+                        &.active{
+                            background-color:  @default-color;
+                            color: @white;
+                            border-color: @white;
+                        }
+                        &:hover{
+                            color: white;
+                            border-color: @white;
+                            background-color:  @default-color;
+                        }
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        a{
+                            display: block;
+                            color: inherit;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+            .chart-box{
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: relative;
+                .chart-box-item{
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 0;
+                    opacity: 0;
+                    margin: auto;
+                    z-index: -20;
+                    overflow: hidden;
+                    position: absolute;
+                    &.active{
+                        z-index: 1;
+                        opacity: 1;
+                        height: auto;
+                        position: static;
+                    }
+                    #chart-temp{
+                        width: 100%;
+                        height: 240px;
+                    }
+                    .chart-canvas{
+                        width: 65%;
+                        float: left;
+                        height: 240px;
+                        #chart-humidity{
+                            width: 100%;
+                            height: 240px;
+                        }
+                    }
+                    .chart-num{
+                    	width: 35%;
+                    	float: right;
+                        height: 240px;
+                    	font-size: 40px;
+                    	text-align: left;
+                    	.num-trgl{
+                        	top: 2px;
+                            width: 0; 
+                        	height: 0; 
+                        	content: "";
+                        	position: relative;
+                        	display: inline-block;
+                        	border-top: 15px solid transparent;
+                        	border-bottom: 15px solid transparent; 
+                        	border-right: 10px solid rgba(77,77,77,0.9); 
+                        }
+                        .num-box(@box-width){
+                        	color: @white;
+                        	margin: 95px 0px;
+                            line-height: 55px;
+                            width: @box-width;
+                        	text-align: center;
+                            .border-radius(5px);
+                        	display: inline-block;
+                        	background-color: rgba(77,77,77,0.9);
+                        }
+                        .num-box-humidity{
+                            .num-box(85px);
+                        }
+                        .num-box-wind{
+                            .num-box(135px);
+                        }
+                    }
+                }
+            }
+        }
+        .forecast-box-right{
+            width: 25.15%;
+            font-size: 16px;
+            vertical-align: top;
+            display: inline-block;
+            img{
+                width: 100%;
+            }
+        }
+        .geolocationerror{
+            width: 100%;
+            font-size: 25px;
+            text-align: center;
+            padding: 150px 15px;
+            .box-sizing(border-box);
+        }
+    }
+}
